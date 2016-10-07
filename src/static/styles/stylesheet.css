@@ -62,13 +62,28 @@ body {
 
 .top-nav {
   background-color: #fff;
+  height: 5rem;
+  position: relative;
 }
 
-.top-nav .logo-image {
+.top-nav .logo-icon,
+.top-nav .logotype {
+  position: absolute;
+}
+
+.top-nav .logo-icon {
   display: inline-block;
   height: 3.125rem;
   margin: 1rem;
   width: 3.125rem;
+}
+
+.top-nav .logotype {
+  display: inline-block;
+  margin: 1.25rem auto;
+  width: 225px;
+  left: 41%;
+  /*TODO center this logo better*/
 }
 
 
