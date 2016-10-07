@@ -1,12 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Routes from './config/Routes.jsx';
 
-class App extends React.Component {
-  render () {
-    return (
-      <h1>YAY</h1>
-    );
-  }
-}
-
-ReactDOM.render(<App />, document.querySelector('#root'));
+ReactDOM.render(<Routes />, document.querySelector('#root'));
