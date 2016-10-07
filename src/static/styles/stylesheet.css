@@ -50,12 +50,26 @@ body,
   height: 100%;
 }
 
+body {
+  font-size: 16px;
+}
+
 
 
 /* =======================
 4. Navs
 ======================= */
 
+.top-nav {
+  background-color: #fff;
+}
+
+.top-nav .logo-image {
+  display: inline-block;
+  height: 3.125rem;
+  margin: 1rem;
+  width: 3.125rem;
+}
 
 
 /* =======================

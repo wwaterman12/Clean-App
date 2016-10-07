@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class TopNav extends Component {
   render() {
     return (
-      <h1>TopNav</h1>
+      <div className="top-nav">
+        <img className="logo-image" src="./images/logo-duck.png" alt="" />
+      </div>
     );
   }
 }
