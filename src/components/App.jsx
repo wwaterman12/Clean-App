@@ -4,7 +4,7 @@ import TopNav from './TopNav.jsx';
 class App extends Component {
   render () {
     return (
-      <div>
+      <div className="app">
         <TopNav />
         {this.props.children}
       </div>
