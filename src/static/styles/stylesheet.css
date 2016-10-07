@@ -42,8 +42,11 @@ black:          333333
 3. Global Styles
 ======================= */
 
-body {
-  background-color: crimson;
+html,
+body,
+#root,
+.app {
+  height: 100%;
 }
 
 
