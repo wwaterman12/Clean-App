@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import TopNav from './TopNav.jsx';
 
 class App extends Component {
   render () {
     return (
-      <h1>This is the app</h1>
+      <div>
+        <TopNav />
+        {this.props.children}
+      </div>
     );
   }
 }
