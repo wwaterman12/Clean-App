@@ -1,3 +1,37 @@
+/* =======================
+
+TABLE OF CONTENTS
+
+1. Reset Styles
+2. Global Styles
+# Media Queries
+
+======================= */
+
+
+
+/* =======================
+1. Reset Styles
+======================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* =======================
+2. Global Styles
+======================= */
+
 body {
   background-color: crimson;
 }
+
+
+
+/* =======================
+# Media Queries
+======================= */
