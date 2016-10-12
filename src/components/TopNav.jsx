@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class TopNav extends Component {
-
   toggleClass() {
-    console.log('toggle is running');
-    let nav = document.querySelectorAll('.nav-item');
-    let hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelectorAll('.nav-item');
+    const hamburger = document.querySelector('.hamburger');
     for (let navItem of nav) {
       if (navItem.className === 'nav-item nav-item--closed') {
         navItem.setAttribute('class', 'nav-item nav-item--open');
@@ -15,7 +14,6 @@ class TopNav extends Component {
     }
     hamburger.innerText == '☰' ? hamburger.innerText='x' : hamburger.innerText='☰';
   }
-
   render() {
     return (
       <div>
@@ -24,9 +22,9 @@ class TopNav extends Component {
           <img className="logotype" src="./images/cleanapp_logotype.png" alt="Cleanapp" />
           <p className="hamburger" onClick={this.toggleClass}>☰</p>
         </div>
-        <p className="nav-item nav-item--closed">What is cleanapp?</p>
-        <p className="nav-item nav-item--closed">how we keep the prices low</p>
-        <p className="nav-item nav-item--closed">log in</p>
+        <Link to="/" className="nav-item nav-item--closed">What is cleanapp?</Link>
+        <Link to="/" className="nav-item nav-item--closed">how we keep the prices low</Link>
+        <Link to="/login" className="nav-item nav-item--closed">log in</Link>
       </div>
     );
   }
