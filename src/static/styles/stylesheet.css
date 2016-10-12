@@ -46,7 +46,8 @@ black:          333333
 html,
 body,
 #root,
-.app {
+.app-container,
+.main-container {
   height: 100%;
 }
 
@@ -62,7 +63,7 @@ body {
 
 .top-nav {
   background-color: #fff;
-  height: 5rem;
+  height: 3.5rem;
   position: relative;
 }
 
@@ -73,16 +74,15 @@ body {
 
 .top-nav .logo-icon {
   display: inline-block;
-  height: 3.125rem;
   margin: 1rem;
-  width: 3.125rem;
+  width: 7.5%;
 }
 
 .top-nav .logotype {
   display: inline-block;
   margin: 1.25rem auto;
-  width: 225px;
-  left: 41%;
+  width: 30%;
+  left: 35%;
   /*TODO center this logo better*/
 }
 
@@ -92,8 +92,40 @@ body {
 ======================= */
 
 .landing-container {
-  background-color: #00d5c3;
+  /*background-color: #00d5c3;*/
+  background: url('../images/cleanapp_landing-background.png') no-repeat center center fixed;
+  background-size: cover;
   height: 100%;
+  position: relative;
+}
+
+.landing-container h1,
+.landing-container p  {
+  color: #fff;
+  text-align: center;
+}
+
+.zip-form {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.zip-form input {
+  border: none;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.zip-form input[type=text] {
+  width: 67%;
+}
+
+.zip-form input[type=submit] {
+  -webkit-appearance: none;
+  background-color: #f2f2f2;
+  border-left: 1px solid #d6d6d6;
+  width: 33%;
 }
 
 

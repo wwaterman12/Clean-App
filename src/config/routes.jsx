@@ -9,8 +9,8 @@ export default class Routes extends React.Component {
     return (
       <Router history={hashHistory} >
         <Route path='/' component={App} >
-          <IndexRoute component={Main} />
-            <IndexRoute component={Landing} />
+          <Route path='' component={Main} >
+            <IndexRoute component={Landing} ></IndexRoute>
             {/* <Route path='login' component={LoginForm} />
             <Route path='register' component={CheckoutForm} />
             <Route path='payment' component={PaymentForm} />
@@ -18,6 +18,7 @@ export default class Routes extends React.Component {
           {/* <Route path='cart' component={ServicesMenu} />
           <Route path='availability' component={VendorList} />
           <Route path='vendor-details' component={VendorDisplay} /> */}
+          </Route>
         </Route>
       </Router>
     );
