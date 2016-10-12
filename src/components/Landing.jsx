@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 class Landing extends Component {
+  handleSubmit(e) {
+    e.preventDefault();
+  }
   render() {
     return (
       <div className="landing-container">
