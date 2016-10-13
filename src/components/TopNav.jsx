@@ -2,17 +2,25 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 class TopNav extends Component {
-  toggleClass() {
-    const nav = document.querySelectorAll('.nav-item');
-    const hamburger = document.querySelector('.hamburger');
-    for (let navItem of nav) {
-      if (navItem.className === 'nav-item nav-item--closed') {
-        navItem.setAttribute('class', 'nav-item nav-item--open');
-      } else if (navItem.className === 'nav-item nav-item--open') {
-        navItem.setAttribute('class', 'nav-item nav-item--closed');
-      }
-    }
-    hamburger.innerText == '☰' ? hamburger.innerText='x' : hamburger.innerText='☰';
+  constructor() {
+    super();
+    this.state = {
+      menuOpen: false,
+    };
+    this.toggleClass = this.toggleClass.bind(this);
+  }
+  componentDidMount() {
+    this.menuIcon();
+    this.menuItemClass();
+  }
+  menuIcon() {
+    return this.state.menuOpen === false ? '☰' : 'x';
+  }
+  menuItemClass() {
+    return this.state.menuOpen === false ? 'nav-item nav-item--closed' : 'nav-item nav-item--open';
+  }
+  toggleClass(e) {
+    this.state.menuOpen === false ? this.setState({ menuOpen: true }) : this.setState({ menuOpen: false });
   }
   render() {
     return (
@@ -20,11 +28,11 @@ class TopNav extends Component {
         <div className="top-nav">
           <img className="logo-icon" src="./images/cleanapp_logo_icon.png" alt="Cleanapp logo" />
           <img className="logotype" src="./images/cleanapp_logotype.png" alt="Cleanapp" />
-          <p className="hamburger" onClick={this.toggleClass}>☰</p>
+          <button className="hamburger" onClick={this.toggleClass}>{this.menuIcon()}</button>
         </div>
-        <Link to="/" className="nav-item nav-item--closed">What is cleanapp?</Link>
-        <Link to="/" className="nav-item nav-item--closed">how we keep the prices low</Link>
-        <Link to="/login" className="nav-item nav-item--closed">log in</Link>
+        <Link to="/" className={this.menuItemClass()}>What is cleanapp?</Link>
+        <Link to="/" className={this.menuItemClass()}>how we keep the prices low</Link>
+        <Link to="/login" className={this.menuItemClass()}>log in</Link>
       </div>
     );
   }

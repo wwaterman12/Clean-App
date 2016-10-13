@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import TopNav from './TopNav.jsx';
 
+const propTypes = {
+  children: React.PropTypes.element,
+};
+
 class Main extends Component {
   render() {
     return (
@@ -11,5 +15,7 @@ class Main extends Component {
     );
   }
 }
+
+Main.propTypes = propTypes;
 
 export default Main;
