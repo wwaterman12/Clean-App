@@ -42,7 +42,7 @@ class TopNav extends Component {
         <Link to="/" className={this.menuItemClass()} onClick={this.toggleClass} >
           How We Keep the Prices Low
         </Link>
-        <Link to="/login" className={this.menuItemClass()} onClick={this.toggleClass} >
+        <Link to="/login" className={`${this.menuItemClass()} nav-item--bottom`} onClick={this.toggleClass} >
           Log In
         </Link>
       </div>

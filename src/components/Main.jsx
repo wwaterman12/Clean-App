@@ -5,10 +5,10 @@ const propTypes = {
   children: React.PropTypes.element,
 };
 
-const Main = () => (
+const Main = ({ children }) => (
   <div className="main-container">
     <TopNav />
-    {this.props.children}
+    {children}
   </div>
 );
 
