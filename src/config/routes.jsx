@@ -4,6 +4,7 @@ import App from '../components/App.jsx';
 import Main from '../components/Main.jsx';
 import Landing from '../components/Landing.jsx';
 import Login from '../components/Login.jsx';
+import Finish from '../components/Finish.jsx';
 
 const Routes = () => (
   <Router history={hashHistory} >
@@ -11,6 +12,7 @@ const Routes = () => (
       <Route path="" component={Main} >
         <IndexRoute component={Landing} />
         <Route path="login" component={Login} />
+        <Route path="finish" component={Finish} />
         {/* <Route path='register' component={CheckoutForm} />
         <Route path='payment' component={PaymentForm} />
         <Route path='finished' component={FinishPage} /> */}

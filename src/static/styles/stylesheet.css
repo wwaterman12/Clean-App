@@ -201,7 +201,54 @@ body {
   width: 33%;
 }
 
+.finish-container {
+  background-color: #fff;
+  background-size: cover;
+  height: 100%;
+  position: relative;
 
+}
+
+.thank-you {
+  display: block;
+  background-color: #f2f2f2;
+  color: #333333;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.checkmark {
+  height: 75px;
+  width: 75px;
+  margin-top: 2rem;
+  margin-left: 39%;
+}
+
+.order-number, .confirm-email {
+  padding-top: 1.5rem;
+  text-align: center;
+  color: #989898;
+  font: 300 16px 'Roboto', sans-serif;
+}
+
+.order-number {
+  text-transform: uppercase;
+}
+
+.home-return {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #00d5c3;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font: 300 16px 'Roboto', sans-serif;
+}
 
 /* =======================
 # Media Queries
