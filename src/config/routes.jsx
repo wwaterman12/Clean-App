@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from '../components/App.jsx';
 import Main from '../components/Main.jsx';
 import Landing from '../components/Landing.jsx';
+import Finish from '../components/finish.jsx';
 
 export default class Routes extends React.Component {
   render () {
@@ -11,6 +12,7 @@ export default class Routes extends React.Component {
         <Route path='/' component={App} >
           <Route path='' component={Main} >
             <IndexRoute component={Landing} ></IndexRoute>
+            <Route path="finish" component={Finish} />
             {/* <Route path='login' component={LoginForm} />
             <Route path='register' component={CheckoutForm} />
             <Route path='payment' component={PaymentForm} />
