@@ -6,7 +6,8 @@ TABLE OF CONTENTS
 2. Reset Styles
 3. Global Styles
 4. Navs
-5. Landing
+5. Main
+6. Landing
 # Media Queries
 
 ======================= */
@@ -37,6 +38,12 @@ black:          333333
   padding: 0;
 }
 
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
 
 
 /* =======================
@@ -63,18 +70,14 @@ body {
 
 .top-nav {
   background-color: #fff;
-  height: 3.5rem;
   position: relative;
+  top: 0;
   z-index: 2;
-}
-
-.top-nav .logo-icon,
-.top-nav .logotype {
-  position: absolute;
 }
 
 .top-nav .logo-icon {
   display: inline-block;
+  float: left;
   margin: 1rem;
   width: 7.5%;
 }
@@ -83,6 +86,7 @@ body {
   display: inline-block;
   margin: 1.25rem auto;
   width: 30%;
+  position: absolute;
   left: 35%;
   /*TODO center this logo better*/
 }
@@ -124,41 +128,71 @@ body {
   margin-top: 0;
 }
 
+
+
 /* =======================
-5. Landing
+5. Main
+======================= */
+
+
+
+/* =======================
+6. Landing
 ======================= */
 
 .landing-container {
-  /*background-color: #00d5c3;*/
   background: url('../images/cleanapp_landing-background.png') no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   position: relative;
 }
 
-.landing-container h1,
-.landing-container p  {
+.landing-content {
+  padding: 8rem 2.5rem;
+}
+
+.landing_header,
+.landing_subhead,
+.landing_postal-code-label  {
   color: #fff;
   text-align: center;
 }
 
-.zip-form {
-  position: fixed;
+.landing_header {
+  font-weight: 400;
+}
+
+.landing_subhead,
+.landing_postal-code-label {
+  font-weight: 300;
+}
+
+.landing_subhead {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.landing_postal-code-label {
+  margin-bottom: 1rem;
+}
+
+.postal-code-form {
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.zip-form input {
+.postal-code-form input {
   border: none;
   font: 400 1rem 'Roboto', sans-serif;
   padding: 1rem;
 }
 
-.zip-form input[type=text] {
+.postal-code-form input[type=text] {
   width: 67%;
 }
 
-.zip-form input[type=submit] {
+.postal-code-form input[type=submit] {
   -webkit-appearance: none;
   background-color: #f2f2f2;
   border-left: 1px solid #d6d6d6;

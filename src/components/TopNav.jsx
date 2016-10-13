@@ -27,7 +27,7 @@ class TopNav extends Component {
   render() {
     return (
       <div>
-        <div className="top-nav">
+        <div className="top-nav clearfix">
           <Link to="/">
             <img className="logo-icon" src="./images/cleanapp_logo_icon.png" alt="Cleanapp logo" />
           </Link>

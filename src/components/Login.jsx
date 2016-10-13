@@ -7,7 +7,9 @@ class Login extends Component {
   }
   render() {
     return (
-      <button onClick={this.handleSubmit}>Login</button>
+      <div className="main-child login-container">
+        <button onClick={this.handleSubmit}>Login</button>
+      </div>
     );
   }
 }
