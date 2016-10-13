@@ -19,7 +19,7 @@ class TopNav extends Component {
   menuItemClass() {
     return this.state.menuOpen === false ? 'nav-item nav-item--closed' : 'nav-item nav-item--open';
   }
-  toggleClass(e) {
+  toggleClass() {
     this.state.menuOpen === false
       ? this.setState({ menuOpen: true })
       : this.setState({ menuOpen: false });

@@ -134,6 +134,9 @@ body {
 5. Main
 ======================= */
 
+.main-child {
+  padding-top: 5rem;
+}
 
 
 /* =======================
@@ -148,7 +151,7 @@ body {
 }
 
 .landing-content {
-  padding: 8rem 2.5rem;
+  padding: 5rem 2.5rem;
 }
 
 .landing_header,
@@ -211,19 +214,18 @@ body {
 
 .thank-you {
   display: block;
-  background-color: #f2f2f2;
-  color: #333333;
+  color: #989898;
+  font-size: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
   padding: 1rem;
-  border-top: 1px solid #d6d6d6;
-  border-bottom: 1px solid #d6d6d6;
 }
 
 .checkmark {
-  height: 75px;
-  width: 75px;
+  left: 38%;
   margin-top: 2rem;
-  margin-left: 39%;
+  position: relative;
+  width: 24%;
 }
 
 .order-number, .confirm-email {
@@ -238,16 +240,17 @@ body {
 }
 
 .home-return {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
   background-color: #00d5c3;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 1rem;
-  text-decoration: none;
   color: #fff;
+  display: block;
   font: 300 16px 'Roboto', sans-serif;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 /* =======================
