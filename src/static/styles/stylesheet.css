@@ -6,7 +6,8 @@ TABLE OF CONTENTS
 2. Reset Styles
 3. Global Styles
 4. Navs
-5. Landing
+5. Main
+6. Landing
 # Media Queries
 
 ======================= */
@@ -37,6 +38,12 @@ black:          333333
   padding: 0;
 }
 
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
 
 
 /* =======================
@@ -63,17 +70,14 @@ body {
 
 .top-nav {
   background-color: #fff;
-  height: 3.5rem;
   position: relative;
-}
-
-.top-nav .logo-icon,
-.top-nav .logotype {
-  position: absolute;
+  top: 0;
+  z-index: 2;
 }
 
 .top-nav .logo-icon {
   display: inline-block;
+  float: left;
   margin: 1rem;
   width: 7.5%;
 }
@@ -82,66 +86,116 @@ body {
   display: inline-block;
   margin: 1.25rem auto;
   width: 30%;
+  position: absolute;
   left: 35%;
   /*TODO center this logo better*/
 }
 
 .top-nav .hamburger {
+  background-color: #fff;
+  border: none;
+  color: #00d5c3;
+  cursor: pointer;
+  font-size: 2.5rem;
   position: absolute;
   right: 5%;
+  -webkit-appearance: none;
+}
+
+.nav-item {
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
   color: #00d5c3;
-  font-size: 2.5rem;
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: margin-top 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.nav-item:hover {
+  background-color: #00d5c3;
+  color: #fff;
 }
 
 .nav-item--closed {
-  display: none;
+  margin-top: -9.75rem;
 }
 
 .nav-item--open {
-  display: block;
-  background-color: #f2f2f2;
-  color: #00d5c3;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 1rem;
-  border-top: 1px solid #d6d6d6;
+  margin-top: 0;
 }
 
+
+
 /* =======================
-5. Landing
+5. Main
+======================= */
+
+.main-child {
+  padding-top: 5rem;
+}
+
+
+/* =======================
+6. Landing
 ======================= */
 
 .landing-container {
-  /*background-color: #00d5c3;*/
   background: url('../images/cleanapp_landing-background.png') no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   position: relative;
 }
 
-.landing-container h1,
-.landing-container p  {
+.landing-content {
+  padding: 5rem 2.5rem;
+}
+
+.landing_header,
+.landing_subhead,
+.landing_postal-code-label  {
   color: #fff;
   text-align: center;
 }
 
-.zip-form {
-  position: fixed;
+.landing_header {
+  font-weight: 400;
+}
+
+.landing_subhead,
+.landing_postal-code-label {
+  font-weight: 300;
+}
+
+.landing_subhead {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.landing_postal-code-label {
+  margin-bottom: 1rem;
+}
+
+.postal-code-form {
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
 
-.zip-form input {
+.postal-code-form input {
   border: none;
   font: 400 1rem 'Roboto', sans-serif;
   padding: 1rem;
 }
 
-.zip-form input[type=text] {
+.postal-code-form input[type=text] {
   width: 67%;
 }
 
-.zip-form input[type=submit] {
+.postal-code-form input[type=submit] {
   -webkit-appearance: none;
   background-color: #f2f2f2;
   border-left: 1px solid #d6d6d6;
@@ -160,19 +214,18 @@ body {
 
 .thank-you {
   display: block;
-  background-color: #f2f2f2;
-  color: #333333;
+  color: #989898;
+  font-size: 1.5rem;
+  margin-top: 2rem;
   text-align: center;
   padding: 1rem;
-  border-top: 1px solid #d6d6d6;
-  border-bottom: 1px solid #d6d6d6;
 }
 
 .checkmark {
-  height: 75px;
-  width: 75px;
+  left: 38%;
   margin-top: 2rem;
-  margin-left: 39%;
+  position: relative;
+  width: 24%;
 }
 
 .order-number, .confirm-email {
@@ -187,16 +240,17 @@ body {
 }
 
 .home-return {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
   background-color: #00d5c3;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 1rem;
-  text-decoration: none;
   color: #fff;
+  display: block;
   font: 300 16px 'Roboto', sans-serif;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 /* =======================

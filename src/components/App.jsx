@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 
-class App extends Component {
-  render () {
-    return (
-      <div className="app-container">
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const propTypes = {
+  children: React.PropTypes.element,
+};
+
+const App = ({ children }) => (
+  <div className="app-container">
+    {children}
+  </div>
+);
+
+App.propTypes = propTypes;
 
 export default App;

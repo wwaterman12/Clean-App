@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TopNav from './TopNav.jsx';
 
-class Main extends Component {
-  render() {
-    return (
-      <div className="main-container">
-        <TopNav />
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const propTypes = {
+  children: React.PropTypes.element,
+};
+
+const Main = () => (
+  <div className="main-container">
+    <TopNav />
+    {this.props.children}
+  </div>
+);
+
+Main.propTypes = propTypes;
 
 export default Main;
