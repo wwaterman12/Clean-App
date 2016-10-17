@@ -7,7 +7,7 @@ const Finish = () => (
     <img className="checkmark" src="./images/cleanapp_checkmark.png" alt="checkmark" />
     <p className="order-number">order no:15687923</p>
     <p className="confirm-email">We&#39;ve sent you a confirmation<br />to your e-mail.</p>
-    <Link className="home-return" to="/">Return to home</Link>
+    <Link className="bottom-button" to="/">Return to home</Link>
   </div>
 );
 

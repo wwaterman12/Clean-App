@@ -226,6 +226,80 @@ body {
   width: 33%;
 }
 
+/* select services page */
+.service-container {
+  height: 100%;
+}
+
+.service-header {
+  margin-top: 0;
+  height: 12.5%;
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
+  color: #333333;
+  display: block;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.service-offering {
+  padding: 10px;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #fbfbfb;
+  height: 15%;
+}
+.service-image {
+  margin-top: 2%;
+  height: 70%;
+  width: 15%;
+}
+
+.service-text {
+  display: inline-block;
+  margin-left: 10%;
+}
+
+.service-title {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+
+}
+
+.service-content {
+  font-size: 12px;
+  color: #989898;
+
+
+}
+
+.service-count {
+  padding: 10px 7px 10px 13px;
+  float: right;
+  margin-top: 5px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.service-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font: 300 16px 'Roboto', sans-serif;
+  padding: 1rem;
+  height: 12.5%;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
 .finish-container {
   background-color: #fff;
   background-size: cover;
@@ -261,7 +335,7 @@ body {
   text-transform: uppercase;
 }
 
-.home-return {
+.bottom-button {
   background-color: #00d5c3;
   color: #fff;
   display: block;
