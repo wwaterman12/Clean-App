@@ -148,7 +148,7 @@ body {
 ======================= */
 
 .landing-container {
-  background: url('../images/cleanapp_landing-background.png') no-repeat center center fixed;
+  background: url('../images/cleanapp_landing-background.png') no-repeat center center scroll;
   background-size: cover;
   height: 100%;
   position: relative;
