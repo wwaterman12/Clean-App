@@ -26,10 +26,14 @@ class TopNav extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="menu clearfix">
         <div className="top-nav clearfix">
           <Link to="/">
-            <img className="logo-icon" src="./images/cleanapp_logo_icon.png" alt="Cleanapp logo" />
+            <img
+              className="logo-icon"
+              src="./images/cleanapp_logo_icon.png"
+              alt="Cleanapp logo"
+            />
           </Link>
           <Link to="/">
             <img className="logotype" src="./images/cleanapp_logotype.png" alt="Cleanapp" />
@@ -37,13 +41,13 @@ class TopNav extends Component {
           <button className="hamburger" onClick={this.toggleClass}>{this.menuIcon()}</button>
         </div>
         <Link to="/" className={this.menuItemClass()} onClick={this.toggleClass} >
-          What is Cleanapp?
+        What is Cleanapp?
         </Link>
         <Link to="/" className={this.menuItemClass()} onClick={this.toggleClass} >
-          How We Keep the Prices Low
+        How We Keep the Prices Low
         </Link>
         <Link to="/login" className={`${this.menuItemClass()} nav-item--bottom`} onClick={this.toggleClass} >
-          Log In
+        Log In
         </Link>
       </div>
     );
