@@ -8,6 +8,7 @@ TABLE OF CONTENTS
 4. Navs
 5. Main
 6. Landing
+7. Login
 # Media Queries
 
 ======================= */
@@ -44,6 +45,12 @@ black:          333333
     clear:both;
 }
 
+button,
+input {
+  font: inherit;
+  -webkit-appearance: none;
+}
+
 
 
 /* =======================
@@ -60,6 +67,7 @@ body,
 
 body {
   font: 400 16px 'Roboto', sans-serif;
+  line-height: 1.5;
 }
 
 
@@ -68,8 +76,14 @@ body {
 4. Navs
 ======================= */
 
+.menu {
+  background-color: #fbfbfb;
+  min-height: 10%;
+}
+
 .top-nav {
   background-color: #fbfbfb;
+  height: 4rem;
   position: relative;
   top: 0;
   z-index: 2;
@@ -77,8 +91,9 @@ body {
 
 .top-nav .logo-icon {
   display: inline-block;
-  float: left;
-  margin: 1rem;
+  position: absolute;
+  top: 25%;
+  left: 3%;
   width: 7.5%;
 }
 
@@ -104,14 +119,15 @@ body {
 
 .nav-item {
   background-color: #f2f2f2;
-  border-top: 1px solid #d6d6d6;
   color: #00d5c3;
   display: block;
-  padding: 1rem;
+  height: 0;
+  overflow: hidden;
+  position: relative;
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  transition: margin-top 0.5s ease-in-out;
+  /*transition: height 0.5s ease-in-out;*/
   z-index: 1;
 }
 
@@ -121,11 +137,13 @@ body {
 }
 
 .nav-item--closed {
-  margin-top: -9.75rem;
+  height: 0;
 }
 
 .nav-item--open {
-  margin-top: 0;
+  border-top: 1px solid #d6d6d6;
+  height: 3rem;
+  padding: 1rem;
 }
 
 .nav-item--bottom {
@@ -139,7 +157,7 @@ body {
 ======================= */
 
 .main-child {
-  padding-top: 5rem;
+  height: 90%;
 }
 
 
@@ -147,10 +165,10 @@ body {
 6. Landing
 ======================= */
 
-.landing-container {
-  background: url('../images/cleanapp_landing-background.png') no-repeat center center fixed;
+.landing-container,
+.login-container {
+  background: url('../images/cleanapp_landing-background.png') no-repeat center center scroll;
   background-size: cover;
-  height: 100%;
   position: relative;
 }
 
@@ -332,5 +350,78 @@ body {
 }
 
 /* =======================
+7. Login
+======================= */
+
+.login-container {
+}
+
+.login-header {
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.login-form_content {
+  align-self: center;
+  width: 100%;
+}
+
+.login-form input {
+  display: block;
+}
+
+.login-form_inputs {
+  margin: 4rem auto;
+}
+
+.login-form_inputs input {
+  border: none;
+  border-radius: 2px;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  width: 80%;
+}
+
+.login-form_password-link {
+  color: #fff;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.login-form input[type=submit] {
+  background-color: #00d5c3;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+
+/* =======================
 # Media Queries
 ======================= */
+
+@media (min-width: 470px) {
+  .top-nav .logotype {
+    width: 8.75rem;
+  }
+
+  .top-nav .logo-icon {
+    width: 2.25rem;
+  }
+}
