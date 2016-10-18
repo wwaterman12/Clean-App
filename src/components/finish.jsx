@@ -9,7 +9,7 @@ const Finish = () => (
       <p className="finish_order-number">Order No: <span>15687923</span></p>
       <p className="finish_confirm-email">We&#39;ve sent you a confirmation to your e-mail.</p>
     </div>
-    <Link className="bottom-button" to="/">Return to home</Link>
+    <Link className="finish_bottom-button" to="/">Return to home</Link>
   </div>
 );
 
