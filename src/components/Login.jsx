@@ -4,7 +4,7 @@ import { hashHistory, withRouter, Link } from 'react-router';
 class Login extends Component {
   static handleSubmit(e) {
     e.preventDefault();
-    hashHistory.push('/');
+    hashHistory.push('/services');
   }
   render() {
     return (
