@@ -11,51 +11,75 @@ class Services extends Component {
   constructor() {
     super();
     this.state = {
-      AC1: { open: false, count: 0 },
-      AC2: { open: false, count: 0 },
-      range: { open: false, count: 0 },
-      bathroom: { open: false, count: 0 },
-      toilet: { open: false, count: 0 },
+      airCondition1: 0,
+      airCondition2: 1,
+      rangeHood: 0,
+      bathroom: 0,
+      toilet: 0,
     };
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.increaseCount = this.increaseCount.bind(this);
+    this.decreaseCount = this.decreaseCount.bind(this);
   }
-  toggleMenu(e) {
-    const offering = e.target.getAttribute('name');
-    const updated = {};
-    updated[offering] = this.state[offering];
-    let menuOpen;
-    updated[offering].open ? menuOpen = false : menuOpen = true;
-    updated[offering].open = menuOpen;
-    this.setState(updated);
+  increaseCount(serviceName) {
+    Object.keys(this.state).forEach((stateKey) => {
+      if (stateKey === serviceName) {
+        const currentValue = this.state[stateKey];
+        const nextValue = currentValue + 1;
+        const newState = {};
+        newState[stateKey] = nextValue;
+        this.setState(newState);
+      }
+    });
   }
-  handleCount(name) {
+  decreaseCount(serviceName) {
+    Object.keys(this.state).forEach((stateKey) => {
+      if (stateKey === serviceName) {
+        const currentValue = this.state[stateKey];
+        if (currentValue > 0) {
+          const nextValue = currentValue - 1;
+          const newState = {};
+          newState[stateKey] = nextValue;
+          this.setState(newState);
+        }
+      }
+    });
   }
   render() {
     return (
-      // TODO There's a lot of repetition here...maybe services list and service should be separate
-      // components?
-      <div className="service-container">
-        <p className="service-header">Select desired cleaning services</p>
-        <Service serviceType="airCondition1" />
-        <Service serviceType="airCondition2" />
-        <Service serviceType="rangeHood" />
-        <Service serviceType="bathroom" />
-        <Service serviceType="toilet" />
-        {/* <div className="service-offering" name="AC1" onClick={this.toggleMenu}>
-        <div className="service-offering" name="toilet" onClick={this.toggleMenu}>
-          <img
-            className="service-image"
-            src="./images/services-icons/cleanapp_services_toilet.png"
-            alt="toilet"
-          />
-          <div className="service-text">
-            <p className="service-title">Toilet</p>
-            <p className="service-content">Reduce dust and allergies</p>
-          </div>
-          <span className="service-count">5</span>
-        </div> */}
+      <div className="service-list-container">
+        <p className="service-list-header">Select desired cleaning services</p>
+        <Service
+          serviceType="airCondition1"
+          count={this.state.airCondition1}
+          handleIncreaseCount={this.increaseCount}
+          handleDecreaseCount={this.decreaseCount}
+        />
+        <Service
+          serviceType="airCondition2"
+          count={this.state.airCondition2}
+          handleIncreaseCount={this.increaseCount}
+          handleDecreaseCount={this.decreaseCount}
+        />
+        <Service
+          serviceType="rangeHood"
+          count={this.state.rangeHood}
+          handleIncreaseCount={this.increaseCount}
+          handleDecreaseCount={this.decreaseCount}
+        />
+        <Service
+          serviceType="bathroom"
+          count={this.state.bathroom}
+          handleIncreaseCount={this.increaseCount}
+          handleDecreaseCount={this.decreaseCount}
+        />
+        <Service
+          serviceType="toilet"
+          count={this.state.toilet}
+          handleIncreaseCount={this.increaseCount}
+          handleDecreaseCount={this.decreaseCount}
+        />
         <Link className="service-bottom-button" to="/">Next</Link>
-        {/* <MenuModal name="toilet" /> */}
       </div>
     );
   }
