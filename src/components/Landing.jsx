@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { hashHistory } from 'react-router';
 
 class Landing extends Component {
   handleSubmit(e) {
     e.preventDefault();
+    hashHistory.push('/services');
   }
   render() {
     return (
