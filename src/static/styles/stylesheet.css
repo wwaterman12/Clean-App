@@ -9,6 +9,8 @@ TABLE OF CONTENTS
 5. Main
 6. Landing
 7. Login
+8. Services
+9. Finish
 # Media Queries
 
 ======================= */
@@ -83,27 +85,22 @@ body {
 
 .top-nav {
   background-color: #fbfbfb;
-  height: 4rem;
   position: relative;
   top: 0;
-  z-index: 2;
 }
 
-.top-nav .logo-icon {
-  display: inline-block;
+.top-nav .logo-icon img {
+  margin: auto 0;
   position: absolute;
-  top: 25%;
-  left: 3%;
-  width: 7.5%;
+  top: 0%; right: 0%; bottom: 0%; left: 3%;
+  width: 13%;
 }
 
-.top-nav .logotype {
-  display: inline-block;
-  margin: 1.25rem auto;
+.top-nav .logotype img {
+  margin: auto;
+  position: absolute;
+  top: 0%; right: 0%; bottom: 0%; left: 0%;
   width: 30%;
-  position: absolute;
-  left: 35%;
-  /*TODO center this logo better*/
 }
 
 .top-nav .hamburger {
@@ -112,8 +109,11 @@ body {
   color: #00d5c3;
   cursor: pointer;
   font-size: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: auto 0;
   position: absolute;
-  right: 5%;
+  top: 0%; right: 3%; bottom: 0%;
   -webkit-appearance: none;
 }
 
@@ -127,8 +127,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  /*transition: height 0.5s ease-in-out;*/
-  z-index: 1;
+  transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
 .nav-item:hover {
@@ -136,7 +135,12 @@ body {
   color: #fff;
 }
 
+.nav-item--bottom {
+  border-bottom: 1px solid #d6d6d6;
+}
+
 .nav-item--closed {
+  border: none;
   height: 0;
 }
 
@@ -144,10 +148,6 @@ body {
   border-top: 1px solid #d6d6d6;
   height: 3rem;
   padding: 1rem;
-}
-
-.nav-item--bottom {
-  border-bottom: 1px solid #d6d6d6;
 }
 
 
@@ -159,6 +159,7 @@ body {
 .main-child {
   height: 90%;
 }
+
 
 
 /* =======================
@@ -226,135 +227,11 @@ body {
   width: 33%;
 }
 
-/* select services page */
-.service-container {
-  height: 100%;
-}
 
-.service-header {
-  margin-top: 0;
-  height: 12.5%;
-  background-color: #f2f2f2;
-  border-top: 1px solid #d6d6d6;
-  color: #333333;
-  display: block;
-  padding: 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  z-index: 1;
-}
-
-.service-offering {
-  padding: 10px;
-  border-top: 1px solid #d6d6d6;
-  border-bottom: 1px solid #d6d6d6;
-  background-color: #fbfbfb;
-  height: 15%;
-}
-.service-image {
-  margin-top: 2%;
-  height: 70%;
-  width: 15%;
-}
-
-.service-text {
-  display: inline-block;
-  margin-left: 10%;
-}
-
-.service-title {
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
-
-}
-
-.service-content {
-  font-size: 12px;
-  color: #989898;
-
-
-}
-
-.service-count {
-  padding: 10px 7px 10px 13px;
-  float: right;
-  margin-top: 5px;
-  height: 40px;
-  width: 40px;
-  border: 1px solid black;
-  border-radius: 50%;
-}
-
-.service-bottom-button {
-  background-color: #00d5c3;
-  color: #fff;
-  display: block;
-  font: 300 16px 'Roboto', sans-serif;
-  padding: 1rem;
-  height: 12.5%;
-  bottom: 0;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.finish-container {
-  background-color: #fff;
-  background-size: cover;
-  height: 100%;
-  position: relative;
-
-}
-
-.thank-you {
-  display: block;
-  color: #989898;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  text-align: center;
-  padding: 1rem;
-}
-
-.checkmark {
-  left: 38%;
-  margin-top: 2rem;
-  position: relative;
-  width: 24%;
-}
-
-.order-number, .confirm-email {
-  padding-top: 1.5rem;
-  text-align: center;
-  color: #989898;
-  font: 300 16px 'Roboto', sans-serif;
-}
-
-.order-number {
-  text-transform: uppercase;
-}
-
-.bottom-button {
-  background-color: #00d5c3;
-  color: #fff;
-  display: block;
-  font: 300 16px 'Roboto', sans-serif;
-  padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
-}
 
 /* =======================
 7. Login
 ======================= */
-
-.login-container {
-}
 
 .login-header {
   color: #fff;
@@ -413,15 +290,148 @@ body {
 
 
 /* =======================
+8. Services
+======================= */
+
+.service-container {
+  height: 100%;
+}
+
+.service-header {
+  margin-top: 0;
+  height: 12.5%;
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
+  color: #333333;
+  display: block;
+  padding: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.service-offering {
+  padding: 10px;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #fbfbfb;
+  height: 15%;
+}
+.service-image {
+  margin-top: 2%;
+  height: 70%;
+  width: 15%;
+}
+
+.service-text {
+  display: inline-block;
+  margin-left: 10%;
+}
+
+.service-title {
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.service-content {
+  font-size: 12px;
+  color: #989898;
+}
+
+.service-count {
+  padding: 10px 7px 10px 13px;
+  float: right;
+  margin-top: 5px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.service-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font: 300 16px 'Roboto', sans-serif;
+  padding: 1rem;
+  height: 12.5%;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+
+/* =======================
+9. Finish
+======================= */
+
+.finish-container {
+  color: #989898;
+  display: flex;
+  justify-content: center;
+}
+
+.finish-content {
+  align-self: center;
+  margin: -5rem 17.5% 0;
+  text-align: center;
+}
+
+.finish-content p {
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+
+.finish_thank-you {
+  display: block;
+  color: #989898;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.finish_checkmark {
+  width: 24%;
+}
+
+.finish_order-number {
+  text-transform: uppercase;
+}
+
+.finish_order-number span {
+  font-weight: 400;
+}
+
+.bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font: 300 16px 'Roboto', sans-serif;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+
+
+/* =======================
 # Media Queries
 ======================= */
 
 @media (min-width: 470px) {
-  .top-nav .logotype {
+  .top-nav .logotype img {
     width: 8.75rem;
   }
 
-  .top-nav .logo-icon {
+  .top-nav .logo-icon img {
     width: 2.25rem;
   }
 }
