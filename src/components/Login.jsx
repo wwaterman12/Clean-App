@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { hashHistory, withRouter } from 'react-router';
+import { hashHistory, withRouter, Link } from 'react-router';
 
 class Login extends Component {
-  handleSubmit(e) {
+  static handleSubmit(e) {
     e.preventDefault();
     hashHistory.push('/');
   }
@@ -16,9 +16,9 @@ class Login extends Component {
               <input type="email" name="email" placeholder="Email" />
               <input type="password" name="password" placeholder="Password" />
             </div>
-            <a className="login-form_password-link" href="#">Forgot your password?</a>
+            <Link className="login-form_password-link" to="/login">Forgot your password?</Link>
           </div>
-          <input type="submit" value="Log In" onClick={this.handleSubmit} />
+          <input type="submit" value="Log In" onClick={Login.handleSubmit} />
         </form>
       </div>
     );

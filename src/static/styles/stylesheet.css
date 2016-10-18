@@ -371,7 +371,6 @@ body {
 
 .finish-container {
   color: #989898;
-  /*position: relative;*/
   display: flex;
   justify-content: center;
 }
@@ -379,8 +378,6 @@ body {
 .finish-content {
   align-self: center;
   margin: -5rem 17.5% 0;
-  /*position: absolute;*/
-  /*top: 0; right: 0; bottom: 0; left 0;*/
   text-align: center;
 }
 

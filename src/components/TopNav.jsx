@@ -9,10 +9,9 @@ class TopNav extends Component {
       navHeight: '0px',
     };
     this.toggleClass = this.toggleClass.bind(this);
-    this.handleNavResize = this.handleNavResize.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('resize', this.handleNavResize);
+    window.addEventListener('resize', this.handleResize);
     this.handleNavResize();
     this.menuIcon();
     this.menuItemClass();
@@ -36,9 +35,9 @@ class TopNav extends Component {
   }
   toggleClass() {
     if (this.state.menuOpen === false) {
-      this.setState({ menuOpen: true });
+      return this.setState({ menuOpen: true });
     }
-    this.setState({ menuOpen: false });
+    return this.setState({ menuOpen: false });
   }
   render() {
     return (
@@ -50,7 +49,9 @@ class TopNav extends Component {
           <Link to="/" className="logotype">
             <img src="./images/cleanapp_logotype.png" alt="Cleanapp" />
           </Link>
-          <button className="hamburger" onClick={this.toggleClass}>{this.menuIcon()}</button>
+          <button className="hamburger" onClick={this.toggleClass}>
+            {this.menuIcon()}
+          </button>
         </div>
         <Link to="/" className={this.menuItemClass()} onClick={this.toggleClass} >
           What is Cleanapp?
@@ -58,8 +59,12 @@ class TopNav extends Component {
         <Link to="/" className={this.menuItemClass()} onClick={this.toggleClass} >
           How We Keep the Prices Low
         </Link>
-        <Link to="/login" className={`${this.menuItemClass()} nav-item--bottom`} onClick={this.toggleClass} >
-        Log In
+        <Link
+          to="/login"
+          className={`${this.menuItemClass()} nav-item--bottom`}
+          onClick={this.toggleClass}
+        >
+          Log In
         </Link>
       </div>
     );
