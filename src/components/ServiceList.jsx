@@ -17,7 +17,6 @@ class Services extends Component {
       bathroom: 0,
       toilet: 0,
     };
-    this.toggleMenu = this.toggleMenu.bind(this);
     this.increaseCount = this.increaseCount.bind(this);
     this.decreaseCount = this.decreaseCount.bind(this);
   }
