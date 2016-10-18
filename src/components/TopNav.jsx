@@ -9,9 +9,10 @@ class TopNav extends Component {
       navHeight: '0px',
     };
     this.toggleClass = this.toggleClass.bind(this);
+    this.handleNavResize = this.handleNavResize.bind(this);
   }
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleNavResize);
     this.handleNavResize();
     this.menuIcon();
     this.menuItemClass();
@@ -28,10 +29,16 @@ class TopNav extends Component {
     return this.state.menuOpen === false ? '☰' : 'x';
   }
   menuItemClass() {
-    return this.state.menuOpen === false ? 'nav-item nav-item--closed' : 'nav-item nav-item--open';
+    if (this.state.menuOpen === false) {
+      return 'nav-item nav-item--closed';
+    }
+    return 'nav-item nav-item--open';
   }
   toggleClass() {
-    this.state.menuOpen === false ? this.setState({ menuOpen: true }) : this.setState({ menuOpen: false });
+    if (this.state.menuOpen === false) {
+      this.setState({ menuOpen: true });
+    }
+    this.setState({ menuOpen: false });
   }
   render() {
     return (
