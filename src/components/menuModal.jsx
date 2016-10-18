@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 const propTypes = {
   updateCount: React.PropTypes.func,
   serviceType: React.PropTypes.string,
 };
 
-export default class MenuModal extends React.Component {
-  constructor () {
+class MenuModal extends Component {
+  constructor() {
     super();
     this.state = {
       count: 0,
     };
     this.handleCount = this.handleCount.bind(this);
   }
-
-  handleCount (e) {
+  handleCount(e) {
     let newCount = this.state.count;
     if (e.target.getAttribute('name') === 'up') {
       newCount ++;
@@ -29,8 +28,7 @@ export default class MenuModal extends React.Component {
       })
     }
   }
-
-  render () {
+  render() {
     return (
       <div>
         <div name='down' onClick={this.handleCount}>-</div>
@@ -40,3 +38,7 @@ export default class MenuModal extends React.Component {
     );
   }
 }
+
+MenuModal.propTypes = propTypes;
+
+export default MenuModal;

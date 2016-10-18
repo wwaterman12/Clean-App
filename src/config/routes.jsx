@@ -5,7 +5,7 @@ import Main from '../components/Main.jsx';
 import Landing from '../components/Landing.jsx';
 import Login from '../components/Login.jsx';
 import Finish from '../components/Finish.jsx';
-import Services from '../components/services.jsx';
+import ServiceList from '../components/ServiceList.jsx';
 
 const Routes = () => (
   <Router history={hashHistory} >
@@ -21,7 +21,7 @@ const Routes = () => (
         <Route path='availability' component={VendorList} />
         <Route path='vendor-details' component={VendorDisplay} /> */}
       </Route>
-      <Route path="services" component={Services} />
+      <Route path="services" component={ServiceList} />
     </Route>
   </Router>
 );
