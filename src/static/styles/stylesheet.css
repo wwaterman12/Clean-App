@@ -72,6 +72,11 @@ body {
   line-height: 1.5;
 }
 
+input[type=submit],
+button {
+  cursor: pointer;
+}
+
 
 
 /* =======================
@@ -241,6 +246,7 @@ body {
 }
 
 .login-form {
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
   height: 100%;
@@ -293,74 +299,152 @@ body {
 8. Services
 ======================= */
 
-.service-container {
+.service-list-container {
   height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
 }
 
-.service-header {
+.service-list-offerings {
+}
+
+.service-list-header {
   margin-top: 0;
-  height: 12.5%;
   background-color: #f2f2f2;
   border-top: 1px solid #d6d6d6;
   color: #333333;
   display: block;
   padding: 1.5rem;
+  position: relative;
   text-align: center;
-  text-decoration: none;
-  z-index: 1;
 }
 
 .service-offering {
-  padding: 10px;
   border-top: 1px solid #d6d6d6;
   border-bottom: 1px solid #d6d6d6;
   background-color: #fbfbfb;
-  height: 15%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex: 1;
+  flex: 1;
+  height: 20%;
+  overflow: hidden;
 }
+
+.service-image,
+.service-text,
+.service-count {
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
 .service-image {
-  margin-top: 2%;
-  height: 70%;
-  width: 15%;
+  flex: 1;
+  height: 100%;
+  padding: 1.5rem;
+  width: 25%;
+}
+
+.service-image img {
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .service-text {
-  display: inline-block;
-  margin-left: 10%;
+  flex: 5;
 }
 
-.service-title {
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
+.service-name {
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
-.service-content {
-  font-size: 12px;
+.service-description {
+  font-size: 0.75rem;
   color: #989898;
 }
 
 .service-count {
-  padding: 10px 7px 10px 13px;
-  float: right;
-  margin-top: 5px;
-  height: 40px;
-  width: 40px;
-  border: 1px solid black;
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.service-count-button {
+  background-color: transparent;
+  border: 1px solid #000;
   border-radius: 50%;
+  height: 0%;
+  width: 0%;
+  padding-left: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+.service-count-button--selected {
+  background-color: #00d5c3;
+  border-color: #00d5c3;
+  color: #fff;
+}
+
+.service-button-content {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  position: absolute;
+  top: calc(50% - 0.625rem);
+  left: calc(50% - 0.3511rem);
 }
 
 .service-bottom-button {
   background-color: #00d5c3;
   color: #fff;
   display: block;
-  font: 300 16px 'Roboto', sans-serif;
   padding: 1rem;
-  height: 12.5%;
+  position: relative;
   bottom: 0;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+}
+
+.service-incrementor {
+  -webkit-flex: 1;
+          flex: 1;
+}
+
+.service-incrementor--hidden {
+  display: none;
+}
+
+.service-incrementor--shown {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+
+.service-incrementor button {
+  background-color: #00d5c3;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.service-incrementor .down {
+  border-top: 2px solid #fff;
 }
 
 
@@ -371,6 +455,7 @@ body {
 
 .finish-container {
   color: #989898;
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
 }
@@ -406,11 +491,11 @@ body {
   font-weight: 400;
 }
 
-.bottom-button {
+.finish_bottom-button {
   background-color: #00d5c3;
   color: #fff;
   display: block;
-  font: 300 16px 'Roboto', sans-serif;
+  font-weight: 300;
   padding: 1rem;
   position: absolute;
   bottom: 0;
