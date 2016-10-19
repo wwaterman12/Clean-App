@@ -24,13 +24,24 @@ class App extends Component {
   setPostalCode(postalCode) {
     this.setState({ postalCode });
   }
-  increaseCount(serviceToIncrease) {
+  increaseCount(serviceToChange) {
+    this.countServices(serviceToChange, '+');
+  }
+  decreaseCount(serviceToChange) {
+    this.countServices(serviceToChange, '-');
+  }
+  countServices(serviceToChange, operand) {
     const { servicesSelected } = this.state;
+    const newState = {};
     Object.keys(servicesSelected).forEach((service) => {
-      const newState = {};
-      if (service === serviceToIncrease) {
+      if (service === serviceToChange) {
         const currentValue = servicesSelected[service];
-        const nextValue = currentValue + 1;
+        let nextValue;
+        if (operand === '+') {
+          nextValue = currentValue + 1;
+        } else {
+          currentValue > 0 ? nextValue = currentValue - 1 : nextValue = currentValue;
+        }
         newState[service] = nextValue;
       } else {
         newState[service] = servicesSelected[service];
@@ -38,24 +49,15 @@ class App extends Component {
       this.setState({ servicesSelected: newState });
     });
   }
-  decreaseCount(serviceName) {
-    Object.keys(this.state).forEach((stateKey) => {
-      if (stateKey === serviceName) {
-        const currentValue = this.state[stateKey];
-        if (currentValue > 0) {
-          const nextValue = currentValue - 1;
-          const newState = {};
-          newState[stateKey] = nextValue;
-          this.setState(newState);
-        }
-      }
-    });
-  }
   render() {
     const childrenWithProps = React.cloneElement(this.props.children, {
       postalCode: this.state.postalCode,
       servicesSelected: this.state.servicesSelected,
       setPostalCode: this.setPostalCode,
+      selectedOfferings: this.state.selectedOfferings,
+      setSelectedOfferings: this.setSelectedOfferings,
+      handleIncreaseCount: this.increaseCount,
+      handleDecreaseCount: this.decreaseCount,
     });
     return (
       <div className="app-container">
