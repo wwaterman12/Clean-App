@@ -40,7 +40,7 @@ class ProvidersDisplay extends React.Component {
               end: 1400,
             },
           },
-        }
+        },
         CleaningDucks: {
           prices: {
             AC1: 7000,
@@ -64,7 +64,7 @@ class ProvidersDisplay extends React.Component {
             Saturday: {},
             Sunday: {},
           }
-        }
+        },
         SuperCleaners: {
           prices: {
             AC1: 8000,
@@ -126,7 +126,6 @@ class ProvidersDisplay extends React.Component {
     let newStart;
     let newEnd;
     if (direction > 0) {
-      debugger
       newStart = new Date(startDate.valueOf() + 1000*60*60*24*8);
       newEnd = new Date(endDate.valueOf() + 1000*60*60*24*8);
     }
