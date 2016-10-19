@@ -25,11 +25,11 @@ class Landing extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  componentDidMount() {
-    this.setSubmitButtonClass();
-  }
   setSubmitButtonClass() {
-
+    if (this.state.localPostalCode.length > 0) {
+      return 'submit-button--active';
+    }
+    return 'submit-button--inactive';
   }
   handleInput(e) {
     const localPostalCode = e.target.value;
@@ -70,7 +70,11 @@ class Landing extends Component {
             onChange={this.handleInput}
             value={this.state.localPostalCode}
           />
-          <input className="submit-button" type="submit" value="Next" />
+          <input
+            className={`submit-button ${this.setSubmitButtonClass()}`}
+            type="submit"
+            value="Next"
+          />
         </form>
       </div>
     );

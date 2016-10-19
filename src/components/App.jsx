@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      postalCode: 'null',
+      postalCode: '',
     };
     this.setPostalCode = this.setPostalCode.bind(this);
   }
