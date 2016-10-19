@@ -40,7 +40,7 @@ class ProvidersDisplay extends React.Component {
               end: 1400,
             },
           },
-        }
+        },
         CleaningDucks: {
           prices: {
             AC1: 7000,
@@ -64,7 +64,7 @@ class ProvidersDisplay extends React.Component {
             Saturday: {},
             Sunday: {},
           }
-        }
+        },
         SuperCleaners: {
           prices: {
             AC1: 8000,
