@@ -7,6 +7,16 @@ const propTypes = {
 };
 
 class Landing extends Component {
+  static setValidationMessage(valid) {
+    if (valid === true) {
+      const validationMessageNode = document.querySelector('.landing_postal-code-validation-message');
+      validationMessageNode.textContent = '';
+      return;
+    }
+    const validationMessageNode = document.querySelector('.landing_postal-code-validation-message');
+    validationMessageNode.textContent = 'Please enter a valid postal code.';
+    return;
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -26,11 +36,17 @@ class Landing extends Component {
     if (e.target.value.length <= 7) {
       this.setState({ localPostalCode });
     }
+    if (e.target.value.length >= 7) {
+      Landing.setValidationMessage(true);
+    }
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.setPostalCode(this.state.localPostalCode);
-    hashHistory.push('/services');
+    if (this.state.localPostalCode.length === 7) {
+      this.props.setPostalCode(this.state.localPostalCode);
+      hashHistory.push('/services');
+    }
+    Landing.setValidationMessage(false);
   }
   render() {
     return (
@@ -42,6 +58,7 @@ class Landing extends Component {
           </h3>
         </div>
         <form className="postal-code-form" onSubmit={this.handleSubmit} >
+          <p className="landing_postal-code-validation-message" />
           <p className="landing_postal-code-label">Insert your postal code below</p>
           <input
             type="number"
