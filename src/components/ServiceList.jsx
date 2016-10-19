@@ -3,20 +3,20 @@ import { Link } from 'react-router';
 import Service from './Service.jsx';
 
 const propTypes = {
-
+  servicesSelected: React.PropTypes.object,
 };
 
 
 class Services extends Component {
-  constructor() {
-    super();
-    this.state = {
-      airCondition1: 0,
-      airCondition2: 0,
-      rangeHood: 0,
-      bathroom: 0,
-      toilet: 0,
-    };
+  constructor(props) {
+    super(props);
+    // this.state = {
+    //   airCondition1: this.props.servicesSelected.airCondition1,
+    //   airCondition2: this.props.servicesSelected.airCondition2,
+    //   rangeHood: this.props.servicesSelected.rangeHood,
+    //   bathroom: this.props.servicesSelected.bathroom,
+    //   toilet: this.props.servicesSelected.toilet,
+    // };
     this.increaseCount = this.increaseCount.bind(this);
     this.decreaseCount = this.decreaseCount.bind(this);
   }
@@ -50,31 +50,31 @@ class Services extends Component {
         <p className="service-list-header">Select desired cleaning services</p>
         <Service
           serviceType="airCondition1"
-          count={this.state.airCondition1}
+          count={this.props.servicesSelected.airCondition1}
           handleIncreaseCount={this.increaseCount}
           handleDecreaseCount={this.decreaseCount}
         />
         <Service
           serviceType="airCondition2"
-          count={this.state.airCondition2}
+          count={this.props.servicesSelected.airCondition2}
           handleIncreaseCount={this.increaseCount}
           handleDecreaseCount={this.decreaseCount}
         />
         <Service
           serviceType="rangeHood"
-          count={this.state.rangeHood}
+          count={this.props.servicesSelected.rangeHood}
           handleIncreaseCount={this.increaseCount}
           handleDecreaseCount={this.decreaseCount}
         />
         <Service
           serviceType="bathroom"
-          count={this.state.bathroom}
+          count={this.props.servicesSelected.bathroom}
           handleIncreaseCount={this.increaseCount}
           handleDecreaseCount={this.decreaseCount}
         />
         <Service
           serviceType="toilet"
-          count={this.state.toilet}
+          count={this.props.servicesSelected.toilet}
           handleIncreaseCount={this.increaseCount}
           handleDecreaseCount={this.decreaseCount}
         />
