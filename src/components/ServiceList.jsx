@@ -10,6 +10,45 @@ const propTypes = {
 
 
 class Services extends Component {
+  constructor() {
+    super();
+    this.state = {
+      airCondition1: 0,
+      airCondition2: 0,
+      rangeHood: 0,
+      bathroom: 0,
+      toilet: 0,
+    };
+    this.increaseCount = this.increaseCount.bind(this);
+    this.decreaseCount = this.decreaseCount.bind(this);
+  }
+  increaseCount(serviceName) {
+    Object.keys(this.state).forEach((stateKey) => {
+      if (stateKey === serviceName) {
+        const currentValue = this.state[stateKey];
+        const nextValue = currentValue + 1;
+        const newState = {};
+        newState[stateKey] = nextValue;
+        this.setState(newState);
+      }
+    });
+  }
+  decreaseCount(serviceName) {
+    Object.keys(this.state).forEach((stateKey) => {
+      if (stateKey === serviceName) {
+        const currentValue = this.state[stateKey];
+        if (currentValue > 0) {
+          const nextValue = currentValue - 1;
+          const newState = {};
+          newState[stateKey] = nextValue;
+          this.setState(newState);
+        }
+      }
+    });
+  }
+  handleSelections () {
+    this.props.setSelectedOfferings(this.state);
+  }
   render() {
     return (
       <div className="service-list-container">
@@ -44,7 +83,7 @@ class Services extends Component {
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
-        <Link className="service-bottom-button" to="/">Next</Link>
+        <Link onClick={this.handleSelections} className="service-bottom-button" to="/">Next</Link>
       </div>
     );
   }

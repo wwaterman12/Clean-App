@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ProviderOption from './ProviderOption.jsx';
 
 const propTypes = {
   selection: React.PropTypes.object,
+  setVendorAndTime: React.PropTypes.func,
 };
 
 class ProvidersDisplay extends React.Component {
@@ -10,8 +12,9 @@ class ProvidersDisplay extends React.Component {
     super();
     this.state = {
       currentWeek: null,
-      providers: {
-        OsojiMasters: {
+      providers: [
+        {
+          name: 'OsoujiMasters',
           prices: {
             AC1: 6500,
             AC2: 7500,
@@ -19,29 +22,30 @@ class ProvidersDisplay extends React.Component {
             Bathroom: 7000,
             Toilet: 5000,
           },
-          availabilities: {
-            Monday: {
+          availabilities: [
+            {
               start: 1000,
               end: 1200,
             },
-            Tuesday: {
+            {
               start: 1600,
               end: 1800,
             },
-            Wednesday: {},
-            Thursday: {},
-            Friday: {
+            {},
+            {},
+            {
               start: 1100,
               end: 1300,
             },
-            Saturday: {},
-            Sunday: {
+            {},
+            {
               start: 1000,
               end: 1400,
             },
-          },
+          ],
         },
-        CleaningDucks: {
+        {
+          name: 'CleaningDucks',
           prices: {
             AC1: 7000,
             AC2: 8000,
@@ -49,23 +53,24 @@ class ProvidersDisplay extends React.Component {
             Bathroom: 8000,
             Toilet: 5500,
           },
-          availabilities: {
-            Monday: {},
-            Tuesday: {
+          availabilities: [
+            {},
+            {
               start: 1300,
               end: 1500,
             },
-            Wednesday: {},
-            Thursday: {},
-            Friday: {
+            {},
+            {},
+            {
               start: 1000,
               end: 1300,
             },
-            Saturday: {},
-            Sunday: {},
-          }
+            {},
+            {},
+          ]
         },
-        SuperCleaners: {
+        {
+          name: 'SuperCleaners',
           prices: {
             AC1: 8000,
             AC2: 10000,
@@ -73,31 +78,34 @@ class ProvidersDisplay extends React.Component {
             Bathroom: 8000,
             Toilet: 5000,
           },
-          availabilities: {
-            Monday: {},
-            Tuesday: {
+          availabilities: [
+            {},
+            {
               start: 1200,
               end: 1400,
             },
-            Wednesday: {
+            {
               start: 1300,
               end: 1500,
             },
-            Thursday: {},
-            Friday: {
+            {},
+            {
               start: 1000,
               end: 1400,
             },
-            Saturday: {},
-            Sunday: {},
-          },
+            {},
+            {},
+          ],
         },
-      }
+      ]
     };
     this.getDayAndMonth = this.getDayAndMonth.bind(this);
     this.incrementWeek = this.incrementWeek.bind(this);
     this.nextWeek = this.nextWeek.bind(this);
     this.lastWeek = this.lastWeek.bind(this);
+  }
+  associateDates () {
+
   }
   componentWillMount () {
     const today = new Date();
@@ -162,11 +170,27 @@ class ProvidersDisplay extends React.Component {
           <div>Sorted by: lowest price</div>
         </div>
         <div>
-          vendor list goes here
+          {
+            this.state.providers.map((vendor) => {
+              return vendor.availabilities.map((block) => {
+                return (
+                  <Link to='vendor-details'>
+                    <ProviderOption prices={vendor.prices}
+                                    selectedServices={this.props.selection}
+                                    availability={block}
+                                    selectBlock={this.props.setVendorAndTime}
+                                />
+                  </Link>
+                );
+              });
+            })
+          }
         </div>
       </div>
     );
   }
 }
+
+ProvidersDisplay.propTypes = propTypes;
 
 export default ProvidersDisplay;
