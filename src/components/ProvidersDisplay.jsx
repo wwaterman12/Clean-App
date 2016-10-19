@@ -25,6 +25,34 @@ class ProvidersDisplay extends React.Component {
         startDate: today,
         endDate: sevenDays,
       },
+      providers: {
+        OsojiMasters: {
+          prices: {
+            AC1: 6500,
+            AC2: 7500,
+            Range: 8000,
+            Bathroom: 7000,
+            Toilet: 5000,
+          },
+          availabilities: {
+            Monday: {
+              start: 1000,
+              end: 1200,
+            },
+            Tuesday: {
+              start: 1600,
+              end: 1800,
+            },
+            Wednesday: {},
+            Thursday: {},
+            Friday: {
+              start: 1100,
+              end: 1300,
+            },
+          },
+        }
+
+      }
     });
   }
 
@@ -77,12 +105,21 @@ class ProvidersDisplay extends React.Component {
   render () {
     const week = this.getDayAndMonth(this.state.currentWeek);
     return (
-      <div id='week-bar'>
-        <div className='week-button' onClick={this.lastWeek}>triangle</div>
-        <div id='dates-display'>
-          {`${week.startMonth}月${week.startDay}日~${week.endMonth}月${week.endDay}日`}
+      <div>
+        <div id='week-bar'>
+          <div className='week-button' onClick={this.lastWeek}>triangle</div>
+          <div id='dates-display'>
+            {`${week.startMonth}月${week.startDay}日~${week.endMonth}月${week.endDay}日`}
+          </div>
+          <div className='week-button' onClick={this.nextWeek}>triangle</div>
         </div>
-        <div className='week-button' onClick={this.nextWeek}>triangle</div>
+        <div id='filter-options'>
+          <div>Advanced time search</div>
+          <div>Sorted by: lowest price</div>
+        </div>
+        <div>
+
+        </div>
       </div>
     );
   }
