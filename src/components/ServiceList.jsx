@@ -8,42 +8,6 @@ const propTypes = {
 
 
 class Services extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   airCondition1: this.props.servicesSelected.airCondition1,
-    //   airCondition2: this.props.servicesSelected.airCondition2,
-    //   rangeHood: this.props.servicesSelected.rangeHood,
-    //   bathroom: this.props.servicesSelected.bathroom,
-    //   toilet: this.props.servicesSelected.toilet,
-    // };
-    this.increaseCount = this.increaseCount.bind(this);
-    this.decreaseCount = this.decreaseCount.bind(this);
-  }
-  increaseCount(serviceName) {
-    Object.keys(this.state).forEach((stateKey) => {
-      if (stateKey === serviceName) {
-        const currentValue = this.state[stateKey];
-        const nextValue = currentValue + 1;
-        const newState = {};
-        newState[stateKey] = nextValue;
-        this.setState(newState);
-      }
-    });
-  }
-  decreaseCount(serviceName) {
-    Object.keys(this.state).forEach((stateKey) => {
-      if (stateKey === serviceName) {
-        const currentValue = this.state[stateKey];
-        if (currentValue > 0) {
-          const nextValue = currentValue - 1;
-          const newState = {};
-          newState[stateKey] = nextValue;
-          this.setState(newState);
-        }
-      }
-    });
-  }
   render() {
     return (
       <div className="service-list-container">
