@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {
       selectedOfferings: {},
       postalCode: '',
+      selectedVendorAndTime: {},
     };
     this.setPostalCode = this.setPostalCode.bind(this);
   }
@@ -21,12 +22,18 @@ class App extends Component {
       selectedOfferings: selection,
     });
   }
+  setVendorAndTime (provider) {
+    this.setState({
+      selectedVendorAndTime: provider,
+    })
+  }
   render() {
     const childrenWithProps = React.cloneElement(this.props.children, {
       postalCode: this.state.postalCode,
       setPostalCode: this.setPostalCode,
       selectedOfferings: this.state.selectedOfferings,
       setSelectedOfferings: this.setSelectedOfferings,
+      setVendorAndTime: this.setVendorAndTime,
     });
     return (
       <div className="app-container">

@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import Service from './Service.jsx';
 
 const propTypes = {
+    setSelectedOfferings: React.PropTypes.func,
 
 };
 
@@ -44,6 +45,9 @@ class Services extends Component {
       }
     });
   }
+  handleSelections () {
+    this.props.setSelectedOfferings(this.state);
+  }
   render() {
     return (
       <div className="service-list-container">
@@ -78,7 +82,7 @@ class Services extends Component {
           handleIncreaseCount={this.increaseCount}
           handleDecreaseCount={this.decreaseCount}
         />
-        <Link className="service-bottom-button" to="/">Next</Link>
+        <Link onClick={this.handleSelections} className="service-bottom-button" to="/">Next</Link>
       </div>
     );
   }

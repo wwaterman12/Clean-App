@@ -40,7 +40,7 @@ class ProvidersDisplay extends React.Component {
               end: 1400,
             },
           },
-        }
+        },
         CleaningDucks: {
           prices: {
             AC1: 7000,
@@ -64,7 +64,7 @@ class ProvidersDisplay extends React.Component {
             Saturday: {},
             Sunday: {},
           }
-        }
+        },
         SuperCleaners: {
           prices: {
             AC1: 8000,
@@ -163,7 +163,15 @@ class ProvidersDisplay extends React.Component {
           <div>Sorted by: lowest price</div>
         </div>
         <div>
-          vendor list goes here
+          {
+            this.state.providers.map((vendor) => {
+              vendor.availabilities.map((block) => {
+                <ProviderOption prices={vendor.prices}
+                                userSelection={this.props.selection}
+
+              })
+            })
+          }
         </div>
       </div>
     );
