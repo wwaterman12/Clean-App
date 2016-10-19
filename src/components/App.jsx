@@ -4,11 +4,21 @@ const propTypes = {
   children: React.PropTypes.element,
 };
 
-const App = ({ children }) => (
-  <div className="app-container">
-    {children}
-  </div>
-);
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+
+    };
+  }
+  render() {
+    return (
+      <div className="app-container">
+        {this.props.children}
+      </div>
+    );
+  }
+}
 
 App.propTypes = propTypes;
 
