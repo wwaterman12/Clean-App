@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-// const propTypes = {
-//   selection: React.PropTypes.object,
-// };
+const propTypes = {
+  selection: React.PropTypes.object,
+};
 
 class ProvidersDisplay extends React.Component {
   constructor () {
@@ -99,7 +99,6 @@ class ProvidersDisplay extends React.Component {
     this.nextWeek = this.nextWeek.bind(this);
     this.lastWeek = this.lastWeek.bind(this);
   }
-
   componentWillMount () {
     const today = new Date();
     const sevenDays = new Date(Date.now() + 604800000);
@@ -110,7 +109,6 @@ class ProvidersDisplay extends React.Component {
       },
     });
   }
-
   getDayAndMonth () {
     const today = this.state.currentWeek.startDate;
     const nextWeek = this.state.currentWeek.endDate;
@@ -122,25 +120,20 @@ class ProvidersDisplay extends React.Component {
     };
     return weekData;
   }
-
   incrementWeek (direction) {
     const startDate = this.state.currentWeek.startDate;
     const endDate = this.state.currentWeek.endDate;
     let newStart;
     let newEnd;
     if (direction > 0) {
-      console.log('add route hit')
       debugger
       newStart = new Date(startDate.valueOf() + 1000*60*60*24*8);
       newEnd = new Date(endDate.valueOf() + 1000*60*60*24*8);
     }
     else if (direction < 0) {
-      console.log('subtract route hit')
       newStart = new Date(startDate - 691200000);
       newEnd = new Date(endDate - 691200000);
     }
-    console.log(newStart);
-    console.log(newEnd);
     this.setState({
       currentWeek: {
         startDate: newStart,
@@ -148,15 +141,12 @@ class ProvidersDisplay extends React.Component {
       }
     });
   }
-
   nextWeek () {
     this.incrementWeek(1);
   }
-
   lastWeek () {
     this.incrementWeek(-1);
   }
-
   render () {
     const week = this.getDayAndMonth(this.state.currentWeek);
     return (
@@ -173,7 +163,7 @@ class ProvidersDisplay extends React.Component {
           <div>Sorted by: lowest price</div>
         </div>
         <div>
-
+          vendor list goes here
         </div>
       </div>
     );
