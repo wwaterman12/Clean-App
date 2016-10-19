@@ -35,6 +35,7 @@ class Service extends Component {
           serviceIconAlt: 'Air Condition',
           serviceName: 'Air Condition',
           serviceDescription: 'Reduce dust and allergies',
+          learnmore: 'Learn more',
         };
         break;
       case 'airCondition2':
@@ -43,6 +44,7 @@ class Service extends Component {
           serviceIconAlt: 'Air Condition (with robot)',
           serviceName: 'Air Condition (with robot)',
           serviceDescription: 'Reduce dust and allergies',
+          learnmore: 'Learn more',
         };
         break;
       case 'rangeHood':
@@ -51,6 +53,7 @@ class Service extends Component {
           serviceIconAlt: 'Range-hood',
           serviceName: 'Range-hood',
           serviceDescription: 'Remove old kitchen grease',
+          learnmore: 'Learn more',
         };
         break;
       case 'bathroom':
@@ -59,6 +62,7 @@ class Service extends Component {
           serviceIconAlt: 'Bathroom',
           serviceName: 'Bathroom',
           serviceDescription: 'Get a shining bathroom',
+          learnmore: 'Learn more',
         };
         break;
       case 'toilet':
@@ -67,6 +71,7 @@ class Service extends Component {
           serviceIconAlt: 'Toilet',
           serviceName: 'Toilet',
           serviceDescription: 'Get a shining clean toilet',
+          learnmore: 'Learn more',
         };
         break;
       default:
@@ -99,6 +104,7 @@ class Service extends Component {
         <div className="service-text">
           <p className="service-name">{serviceInfo.serviceName}</p>
           <p className="service-description">{serviceInfo.serviceDescription}</p>
+          <p className="service-description"><a href="#">{serviceInfo.learnmore}</a></p>
         </div>
         <div className="service-count">
           <button className={countButtonClass} onClick={this.toggleIncrementor}>
