@@ -12,7 +12,7 @@ class Services extends Component {
     super();
     this.state = {
       airCondition1: 0,
-      airCondition2: 1,
+      airCondition2: 0,
       rangeHood: 0,
       bathroom: 0,
       toilet: 0,
