@@ -1,10 +1,29 @@
 import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 
+const propTypes = {
+  postalCode: React.PropTypes.string,
+};
+
 class Landing extends Component {
+  constructor(props) {
+    super(props);
+    // this.state = {
+    //   postalCode: ,
+    // };
+  }
+  componentDidMount() {
+    this.setSubmitButtonClass();
+  }
+  setSubmitButtonClass() {
+
+  }
+  handleChange(e) {
+
+  }
   handleSubmit(e) {
     e.preventDefault();
-    hashHistory.push('/services');
+    // hashHistory.push('/services');
   }
   render() {
     return (
@@ -17,12 +36,20 @@ class Landing extends Component {
         </div>
         <form className="postal-code-form" onSubmit={this.handleSubmit} >
           <p className="landing_postal-code-label">Insert your postal code below</p>
-          <input type="text" name="postal-code" placeholder="郵便番号" onChange={this.handleChange} />
-          <input type="submit" value="Next" />
+          <input
+            type="text"
+            name="postal-code"
+            placeholder="郵便番号"
+            onChange={this.handleChange}
+            value={this.props.postalCode}
+          />
+          <input className="submit-button" type="submit" value="Next" />
         </form>
       </div>
     );
   }
 }
+
+Landing.propTypes = propTypes;
 
 export default Landing;

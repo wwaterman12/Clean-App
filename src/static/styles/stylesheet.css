@@ -223,13 +223,22 @@ button {
   width: 67%;
 }
 
-.postal-code-form input[type=submit] {
+.postal-code-form .submit-button {
   -webkit-appearance: none;
+  text-transform: uppercase;
+  width: 33%;
+}
+
+.submit-button--inactive {
   background-color: #f2f2f2;
   border-left: 1px solid #d6d6d6;
   color: #989898;
-  text-transform: uppercase;
-  width: 33%;
+}
+
+.submit-button--active {
+  background-color: #00d5c3;
+  border-left: 1px solid #00d5c3;
+  color: #fff;
 }
 
 
