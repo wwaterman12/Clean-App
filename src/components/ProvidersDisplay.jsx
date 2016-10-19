@@ -10,21 +10,6 @@ class ProvidersDisplay extends React.Component {
     super();
     this.state = {
       currentWeek: null,
-    };
-    this.getDayAndMonth = this.getDayAndMonth.bind(this);
-    this.incrementWeek = this.incrementWeek.bind(this);
-    this.nextWeek = this.nextWeek.bind(this);
-    this.lastWeek = this.lastWeek.bind(this);
-  }
-
-  componentWillMount () {
-    const today = new Date();
-    const sevenDays = new Date(Date.now() + 604800000);
-    this.setState({
-      currentWeek: {
-        startDate: today,
-        endDate: sevenDays,
-      },
       providers: {
         OsojiMasters: {
           prices: {
@@ -49,10 +34,80 @@ class ProvidersDisplay extends React.Component {
               start: 1100,
               end: 1300,
             },
+            Saturday: {},
+            Sunday: {
+              start: 1000,
+              end: 1400,
+            },
           },
         }
-
+        CleaningDucks: {
+          prices: {
+            AC1: 7000,
+            AC2: 8000,
+            Range: 7900,
+            Bathroom: 8000,
+            Toilet: 5500,
+          },
+          availabilities: {
+            Monday: {},
+            Tuesday: {
+              start: 1300,
+              end: 1500,
+            },
+            Wednesday: {},
+            Thursday: {},
+            Friday: {
+              start: 1000,
+              end: 1300,
+            },
+            Saturday: {},
+            Sunday: {},
+          }
+        }
+        SuperCleaners: {
+          prices: {
+            AC1: 8000,
+            AC2: 10000,
+            Range: 5000,
+            Bathroom: 8000,
+            Toilet: 5000,
+          },
+          availabilities: {
+            Monday: {},
+            Tuesday: {
+              start: 1200,
+              end: 1400,
+            },
+            Wednesday: {
+              start: 1300,
+              end: 1500,
+            },
+            Thursday: {},
+            Friday: {
+              start: 1000,
+              end: 1400,
+            },
+            Saturday: {},
+            Sunday: {},
+          },
+        },
       }
+    };
+    this.getDayAndMonth = this.getDayAndMonth.bind(this);
+    this.incrementWeek = this.incrementWeek.bind(this);
+    this.nextWeek = this.nextWeek.bind(this);
+    this.lastWeek = this.lastWeek.bind(this);
+  }
+
+  componentWillMount () {
+    const today = new Date();
+    const sevenDays = new Date(Date.now() + 604800000);
+    this.setState({
+      currentWeek: {
+        startDate: today,
+        endDate: sevenDays,
+      },
     });
   }
 
