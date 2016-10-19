@@ -9,6 +9,7 @@ class App extends Component {
     super();
     this.state = {
       postalCode: '',
+      selectedVendorAndTime: {},
       servicesSelected: {
         airCondition1: 0,
         airCondition2: 0,
@@ -49,6 +50,11 @@ class App extends Component {
       this.setState({ servicesSelected: newState });
     });
   }
+  setVendorAndTime (provider) {
+    this.setState({
+      selectedVendorAndTime: provider,
+    })
+  }
   render() {
     const childrenWithProps = React.cloneElement(this.props.children, {
       postalCode: this.state.postalCode,
@@ -56,6 +62,7 @@ class App extends Component {
       setPostalCode: this.setPostalCode,
       selectedOfferings: this.state.selectedOfferings,
       setSelectedOfferings: this.setSelectedOfferings,
+      setVendorAndTime: this.setVendorAndTime,
       handleIncreaseCount: this.increaseCount,
       handleDecreaseCount: this.decreaseCount,
     });
