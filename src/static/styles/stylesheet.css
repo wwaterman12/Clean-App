@@ -219,8 +219,14 @@ button {
   padding: 1rem;
 }
 
-.postal-code-form input[type=text] {
+.postal-code-form input[type=number] {
   width: 67%;
+}
+
+.postal-code-form input[type=number]::-webkit-inner-spin-button,
+.postal-code-form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .postal-code-form .submit-button {

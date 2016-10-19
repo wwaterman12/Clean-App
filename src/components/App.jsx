@@ -10,10 +10,15 @@ class App extends Component {
     this.state = {
       postalCode: '1234567',
     };
+    this.setPostalCode = this.setPostalCode.bind(this);
+  }
+  setPostalCode(postalCode) {
+    this.setState({ postalCode });
   }
   render() {
     const childrenWithProps = React.cloneElement(this.props.children, {
       postalCode: this.state.postalCode,
+      setPostalCode: this.setPostalCode,
     });
     return (
       <div className="app-container">

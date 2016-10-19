@@ -3,14 +3,17 @@ import { hashHistory } from 'react-router';
 
 const propTypes = {
   postalCode: React.PropTypes.string,
+  setPostalCode: React.PropTypes.func,
 };
 
 class Landing extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   postalCode: ,
-    // };
+    this.state = {
+      localPostalCode: this.props.postalCode,
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.setSubmitButtonClass();
@@ -18,12 +21,16 @@ class Landing extends Component {
   setSubmitButtonClass() {
 
   }
-  handleChange(e) {
-
+  handleInput(e) {
+    const localPostalCode = e.target.value;
+    if (e.target.value.length <= 7) {
+      this.setState({ localPostalCode });
+    }
   }
   handleSubmit(e) {
     e.preventDefault();
-    // hashHistory.push('/services');
+    this.props.setPostalCode(this.state.localPostalCode);
+    hashHistory.push('/services');
   }
   render() {
     return (
@@ -37,11 +44,14 @@ class Landing extends Component {
         <form className="postal-code-form" onSubmit={this.handleSubmit} >
           <p className="landing_postal-code-label">Insert your postal code below</p>
           <input
-            type="text"
+            type="number"
+            pattern="[0-9]*"
+            maxLength={7}
+            min={0}
             name="postal-code"
             placeholder="郵便番号"
-            onChange={this.handleChange}
-            value={this.props.postalCode}
+            onChange={this.handleInput}
+            value={this.state.localPostalCode}
           />
           <input className="submit-button" type="submit" value="Next" />
         </form>
