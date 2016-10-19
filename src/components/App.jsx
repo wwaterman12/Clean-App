@@ -8,13 +8,21 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      postalCode: '',
     };
+    this.setPostalCode = this.setPostalCode.bind(this);
+  }
+  setPostalCode(postalCode) {
+    this.setState({ postalCode });
   }
   render() {
+    const childrenWithProps = React.cloneElement(this.props.children, {
+      postalCode: this.state.postalCode,
+      setPostalCode: this.setPostalCode,
+    });
     return (
       <div className="app-container">
-        {this.props.children}
+        {childrenWithProps}
       </div>
     );
   }
