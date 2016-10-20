@@ -141,12 +141,12 @@ class ProviderList extends Component {
           <div>Sorted by: Lowest price</div>
         </div>
         <div>
-          { this.state.providers.map((provider, idx) =>
+          { this.state.providers.map(provider =>
             provider.availabilities.map(availability => (
               <ProviderListItem
-                providerID={this.state.providers[idx].id}
-                providerName={this.state.providers[idx].name}
-                totalPrice={10800}
+                providerID={provider.id}
+                providerName={provider.name}
+                prices={provider.prices}
                 availability={availability}
                 selectedServices={this.props.selectedServices}
                 setProviderTimeAndPrice={this.props.setProviderTimeAndPrice}
