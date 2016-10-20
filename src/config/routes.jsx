@@ -6,7 +6,8 @@ import Landing from '../components/Landing.jsx';
 import Login from '../components/Login.jsx';
 import Finish from '../components/Finish.jsx';
 import ServiceList from '../components/ServiceList.jsx';
-import ProvidersDisplay from '../components/ProvidersDisplay.jsx';
+import ProviderList from '../components/providers/ProviderList.jsx';
+import ProviderDetails from '../components/providers/ProviderDetails.jsx';
 import Register from '../components/register.jsx';
 import ConfirmOrder from '../components/confirmorder.jsx';
 
@@ -25,7 +26,10 @@ const Routes = () => (
         <Route path='vendor-details' component={VendorDisplay} /> */}
       </Route>
       <Route path="services" component={ServiceList} />
-      <Route path="providers" component={ProvidersDisplay} />
+      <Route path="providers" >
+        <IndexRoute component={ProviderList} />
+        <Route path=":id" component={ProviderDetails} />
+      </Route>
       <Route path="register" component={Register} />
       <Route path ="confirm-order" component={ConfirmOrder} />
     </Route>
