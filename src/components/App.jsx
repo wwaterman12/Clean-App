@@ -9,8 +9,13 @@ class App extends Component {
     super();
     this.state = {
       postalCode: '',
-      selectedVendorAndTime: {},
-      servicesSelected: {
+      selectedProvider: {
+        id: 0,
+        name: '',
+      },
+      selectedTime: {},
+      totalPrice: 0,
+      selectedServices: {
         airCondition1: 1,
         airCondition2: 1,
         rangeHood: 1,
@@ -19,11 +24,15 @@ class App extends Component {
       },
     };
     this.setPostalCode = this.setPostalCode.bind(this);
+    this.setProviderTimeAndPrice = this.setProviderTimeAndPrice.bind(this);
     this.increaseCount = this.increaseCount.bind(this);
     this.decreaseCount = this.decreaseCount.bind(this);
   }
   setPostalCode(postalCode) {
     this.setState({ postalCode });
+  }
+  setProviderTimeAndPrice({ selectedProvider, selectedTime, totalPrice }) {
+    this.setState({ selectedProvider, selectedTime, totalPrice });
   }
   increaseCount(serviceToChange) {
     this.countServices(serviceToChange, '+');
@@ -32,11 +41,11 @@ class App extends Component {
     this.countServices(serviceToChange, '-');
   }
   countServices(serviceToChange, operand) {
-    const { servicesSelected } = this.state;
+    const { selectedServices } = this.state;
     const newState = {};
-    Object.keys(servicesSelected).forEach((service) => {
+    Object.keys(selectedServices).forEach((service) => {
       if (service === serviceToChange) {
-        const currentValue = servicesSelected[service];
+        const currentValue = selectedServices[service];
         let nextValue;
         if (operand === '+') {
           nextValue = currentValue + 1;
@@ -45,24 +54,20 @@ class App extends Component {
         }
         newState[service] = nextValue;
       } else {
-        newState[service] = servicesSelected[service];
+        newState[service] = selectedServices[service];
       }
-      this.setState({ servicesSelected: newState });
+      this.setState({ selectedServices: newState });
     });
-  }
-  setVendorAndTime (provider) {
-    this.setState({
-      selectedVendorAndTime: provider,
-    })
   }
   render() {
     const childrenWithProps = React.cloneElement(this.props.children, {
       postalCode: this.state.postalCode,
-      servicesSelected: this.state.servicesSelected,
+      selectedProvider: this.state.selectedProvider,
+      selectedTime: this.state.selectedTime,
+      selectedServices: this.state.selectedServices,
+      totalPrice: this.state.totalPrice,
       setPostalCode: this.setPostalCode,
-      selectedOfferings: this.state.selectedOfferings,
-      setSelectedOfferings: this.setSelectedOfferings,
-      setVendorAndTime: this.setVendorAndTime,
+      setProviderTimeAndPrice: this.setProviderTimeAndPrice,
       handleIncreaseCount: this.increaseCount,
       handleDecreaseCount: this.decreaseCount,
     });
