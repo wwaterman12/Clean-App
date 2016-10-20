@@ -490,13 +490,13 @@ button {
 }
 
 /* =======================
-11. Register
+10. Register
 ======================= */
 .register-heading {
   display: block;
   color: #333333;
   font-size: 1.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   background-color: #f2f2f2;
   font: 400 20px 'Roboto', sans-serif;
@@ -542,6 +542,42 @@ button {
   width: 100%;
 
 }
+
+/* =======================
+11. confirm-order
+======================= */
+
+.confirm-heading {
+  display: block;
+  color: #333333;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f2f2f2;
+  font: 400 20px 'Roboto', sans-serif;
+
+}
+
+.confirm-content {
+  border-bottom: .5px solid #f2f2f2;
+  padding: 1rem;
+}
+
+.confirm-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+}
+
 
 /* =======================
 12. Finish
