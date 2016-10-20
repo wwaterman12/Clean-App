@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { hashHistory } from 'react-router';
 
 const propTypes = {
-  postalCode: React.PropTypes.string,
+  postalCode: React.PropTypes.number,
   setPostalCode: React.PropTypes.func,
 };
 
@@ -49,6 +49,7 @@ class Landing extends Component {
     Landing.setValidationMessage(false);
   }
   render() {
+    const postalCode = this.state.localPostalCode === 0 ? '' : this.state.localPostalCode;
     return (
       <div className="main-child landing-container">
         <div className="landing-content">
@@ -68,7 +69,7 @@ class Landing extends Component {
             name="postal-code"
             placeholder="郵便番号"
             onChange={this.handleInput}
-            value={this.state.localPostalCode}
+            value={postalCode}
           />
           <input
             className={`submit-button ${this.setSubmitButtonClass()}`}

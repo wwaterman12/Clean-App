@@ -5,7 +5,7 @@ import Main from '../components/Main.jsx';
 import Landing from '../components/Landing.jsx';
 import Login from '../components/Login.jsx';
 import Finish from '../components/Finish.jsx';
-import ServiceList from '../components/ServiceList.jsx';
+import ServiceList from '../components/services/ServiceList.jsx';
 import ProviderList from '../components/providers/ProviderList.jsx';
 import ProviderDetails from '../components/providers/ProviderDetails.jsx';
 import Register from '../components/register.jsx';

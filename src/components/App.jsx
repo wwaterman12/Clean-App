@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      postalCode: '',
+      postalCode: 0,
       selectedProvider: {
         id: 0,
         name: '',
@@ -16,9 +16,9 @@ class App extends Component {
       selectedTime: {},
       totalPrice: 0,
       selectedServices: {
-        airCondition1: 1,
-        airCondition2: 1,
-        rangeHood: 1,
+        airCondition1: 0,
+        airCondition2: 0,
+        rangeHood: 0,
         bathroom: 0,
         toilet: 0,
       },
@@ -28,7 +28,8 @@ class App extends Component {
     this.increaseCount = this.increaseCount.bind(this);
     this.decreaseCount = this.decreaseCount.bind(this);
   }
-  setPostalCode(postalCode) {
+  setPostalCode(postalCodeInput) {
+    const postalCode = parseInt(postalCodeInput, 10);
     this.setState({ postalCode });
   }
   setProviderTimeAndPrice({ selectedProvider, selectedTime, totalPrice }) {

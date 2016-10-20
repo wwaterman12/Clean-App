@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import ServiceIncrementor from './ServiceIncrementor.jsx';
 
 const propTypes = {
@@ -104,7 +105,7 @@ class Service extends Component {
         <div className="service-text">
           <p className="service-name">{serviceInfo.serviceName}</p>
           <p className="service-description">{serviceInfo.serviceDescription}</p>
-          <p className="service-description"><a href="#">{serviceInfo.learnmore}</a></p>
+          <p className="service-description"><Link href="#/services">{serviceInfo.learnmore}</Link></p>
         </div>
         <div className="service-count">
           <button className={countButtonClass} onClick={this.toggleIncrementor}>

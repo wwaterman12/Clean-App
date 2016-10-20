@@ -36,7 +36,7 @@ class ProviderListItem extends Component {
     return (
       <Link to={`/providers/${this.props.providerID}`} onClick={this.handleSelect}>
         <h3>{this.props.providerName}</h3>
-        <p>{`${this.props.availability.start}—${this.props.availability.start}`}</p>
+        <p>{`${this.props.availability.start}—${this.props.availability.end}`}</p>
         <p>Price: ${totalPrice}</p>
       </Link>
     );
