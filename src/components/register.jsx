@@ -23,7 +23,6 @@ class Register extends Component {
     const updated = {};
     updated[inputName] = input.value;
     this.setState(updated);
-    console.log(updated);
   }
 
 
