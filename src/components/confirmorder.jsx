@@ -9,7 +9,7 @@ class ConfirmOrder extends Component {
       <div>
         <h3 className="confirm-heading">Please confirm your order</h3>
         <div className="confirm-content">
-          <p>Service time<span>{this.state.time}</span></p>
+          <p>Service time<span></span></p>
         </div>
         <div className="confirm-content">
           <p>Service contents<span></span></p>

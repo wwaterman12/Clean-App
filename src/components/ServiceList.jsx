@@ -55,31 +55,31 @@ class Services extends Component {
         <p className="service-list-header">Select desired cleaning services</p>
         <Service
           serviceType="airCondition1"
-          count={this.props.servicesSelected.airCondition1}
+          count={this.props.selectedServices.airCondition1}
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
         <Service
           serviceType="airCondition2"
-          count={this.props.servicesSelected.airCondition2}
+          count={this.props.selectedServices.airCondition2}
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
         <Service
           serviceType="rangeHood"
-          count={this.props.servicesSelected.rangeHood}
+          count={this.props.selectedServices.rangeHood}
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
         <Service
           serviceType="bathroom"
-          count={this.props.servicesSelected.bathroom}
+          count={this.props.selectedServices.bathroom}
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
         <Service
           serviceType="toilet"
-          count={this.props.servicesSelected.toilet}
+          count={this.props.selectedServices.toilet}
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
