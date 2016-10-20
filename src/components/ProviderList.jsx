@@ -7,7 +7,7 @@ const propTypes = {
   setVendorAndTime: React.PropTypes.func,
 };
 
-class ProvidersDisplay extends React.Component {
+class ProviderList extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -154,6 +154,6 @@ class ProvidersDisplay extends React.Component {
   }
 }
 
-ProvidersDisplay.propTypes = propTypes;
+ProviderList.propTypes = propTypes;
 
-export default ProvidersDisplay;
+export default ProviderList;
