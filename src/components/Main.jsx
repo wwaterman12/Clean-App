@@ -3,7 +3,7 @@ import TopNav from './TopNav.jsx';
 
 const propTypes = {
   children: React.PropTypes.element,
-  postalCode: React.PropTypes.string,
+  postalCode: React.PropTypes.number,
   setPostalCode: React.PropTypes.func,
 };
 
