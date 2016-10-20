@@ -6,7 +6,8 @@ import Landing from '../components/Landing.jsx';
 import Login from '../components/Login.jsx';
 import Finish from '../components/Finish.jsx';
 import ServiceList from '../components/ServiceList.jsx';
-import ProviderList from '../components/ProviderList.jsx';
+import ProviderList from '../components/providers/ProviderList.jsx';
+import ProviderDetails from '../components/providers/ProviderDetails.jsx';
 
 const Routes = () => (
   <Router history={hashHistory} >
@@ -25,7 +26,7 @@ const Routes = () => (
       <Route path="services" component={ServiceList} />
       <Route path="providers" >
         <IndexRoute component={ProviderList} />
-        {/* <Route path=":id" component={ProviderDetails} /> */}
+        <Route path=":id" component={ProviderDetails} />
       </Route>
     </Route>
   </Router>

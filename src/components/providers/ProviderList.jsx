@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
-import ProviderOption from './ProviderOption.jsx';
+import ProviderListItem from './ProviderListItem.jsx';
 
 const propTypes = {
-  selection: React.PropTypes.object,
-  setVendorAndTime: React.PropTypes.func,
+  selectedServices: React.PropTypes.object,
+  setProviderTimeAndPrice: React.PropTypes.func,
 };
 
-class ProviderList extends React.Component {
+class ProviderList extends Component {
   constructor() {
     super();
     this.state = {
       currentWeek: null,
       providers: [
         {
+          id: 39585,
           name: 'OsoujiMasters',
           prices: {
             airCondition1: 6500,
@@ -30,6 +31,7 @@ class ProviderList extends React.Component {
           ],
         },
         {
+          id: 57854,
           name: 'CleaningDucks',
           prices: {
             airCondition1: 7000,
@@ -44,6 +46,7 @@ class ProviderList extends React.Component {
           ],
         },
         {
+          id: 48585,
           name: 'SuperCleaners',
           prices: {
             airCondition1: 8000,
@@ -138,16 +141,18 @@ class ProviderList extends React.Component {
           <div>Sorted by: Lowest price</div>
         </div>
         <div>
-          { this.state.providers.map(vendor => vendor.availabilities.map(block => (
-            <Link to="vendor-details">
-              <ProviderOption
-                prices={vendor.prices}
-                selectedServices={this.props.selection}
-                availability={block}
-                selectBlock={this.props.setVendorAndTime}
+          { this.state.providers.map((provider, idx) =>
+            provider.availabilities.map(availability => (
+              <ProviderListItem
+                providerID={this.state.providers[idx].id}
+                providerName={this.state.providers[idx].name}
+                totalPrice={10800}
+                availability={availability}
+                selectedServices={this.props.selectedServices}
+                setProviderTimeAndPrice={this.props.setProviderTimeAndPrice}
               />
-            </Link>
-          ))) }
+            )
+          )) }
         </div>
       </div>
     );
