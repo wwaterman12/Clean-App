@@ -134,7 +134,6 @@ class ProvidersDisplay extends React.Component {
     let newStart;
     let newEnd;
     if (direction > 0) {
-      debugger
       newStart = new Date(startDate.valueOf() + 1000*60*60*24*8);
       newEnd = new Date(endDate.valueOf() + 1000*60*60*24*8);
     }
@@ -160,11 +159,11 @@ class ProvidersDisplay extends React.Component {
     return (
       <div>
         <div id='week-bar'>
-          <div className='week-button' onClick={this.lastWeek}>triangle</div>
-          <div id='dates-display'>
+          <span id="left-week-button" className='week-button' onClick={this.lastWeek}>T</span>
+          <span id='dates-display'>
             {`${week.startMonth}月${week.startDay}日~${week.endMonth}月${week.endDay}日`}
-          </div>
-          <div className='week-button' onClick={this.nextWeek}>triangle</div>
+          </span>
+          <span id="right-week-button" className='week-button' onClick={this.nextWeek}>T</span>
         </div>
         <div id='filter-options'>
           <div>Advanced time search</div>

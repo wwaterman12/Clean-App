@@ -83,7 +83,7 @@ class Services extends Component {
           handleIncreaseCount={this.props.handleIncreaseCount}
           handleDecreaseCount={this.props.handleDecreaseCount}
         />
-        <Link onClick={this.handleSelections} className="service-bottom-button" to="/">Next</Link>
+        <Link onClick={this.handleSelections} className="service-bottom-button" to="providers">Next</Link>
       </div>
     );
   }

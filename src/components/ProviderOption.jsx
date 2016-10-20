@@ -14,7 +14,7 @@ export default class ProviderOption extends React.Component {
   render () {
     return (
       <div onClick={this.setVendor}>
-      i r divcat
+      provider goes here
       </div>
     );
   }
