@@ -11,9 +11,9 @@ class App extends Component {
       postalCode: '',
       selectedVendorAndTime: {},
       servicesSelected: {
-        airCondition1: 0,
-        airCondition2: 0,
-        rangeHood: 0,
+        airCondition1: 1,
+        airCondition2: 1,
+        rangeHood: 1,
         bathroom: 0,
         toilet: 0,
       },
