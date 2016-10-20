@@ -490,7 +490,61 @@ button {
 }
 
 /* =======================
-10. Finish
+11. Register
+======================= */
+.register-heading {
+  display: block;
+  color: #333333;
+  font-size: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f2f2f2;
+  font: 400 20px 'Roboto', sans-serif;
+
+}
+
+.register-form {
+  text-align: center;
+}
+
+.in-line-input {
+  display: inline-block;
+  margin-top: 6%;
+  height: 40px;
+  width: 42%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.block-input {
+  margin-top: 6%;
+  height: 40px;
+  width: 90%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.register-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+}
+
+/* =======================
+12. Finish
 ======================= */
 
 .finish-container {
