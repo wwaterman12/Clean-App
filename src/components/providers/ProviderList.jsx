@@ -89,9 +89,6 @@ class ProviderList extends Component {
     };
     return weekData;
   }
-  // associateDates() {
-  //
-  // }
   incrementWeek(direction) {
     const startDate = this.state.currentWeek.startDate;
     const endDate = this.state.currentWeek.endDate;
@@ -116,6 +113,22 @@ class ProviderList extends Component {
   }
   lastWeek() {
     this.incrementWeek(-1);
+  }
+  generateRandomDate () {
+    const week = this.getDayAndMonth(this.state.currentWeek);
+    let eachDay = week.startDay;
+    let eachMonth = week.startMonth;
+    const dates = [];
+    for(let i=0; i<7; i++) {
+      eachDay += i;
+      if (eachDay === 31) {
+        eachDay = 1;
+        eachMonth += 1;
+      }
+      dates.push({ day: eachDay, month: eachMonth });
+    }
+    const index = Math.floor(Math.random() * 7);
+    return dates[index];
   }
   render() {
     const week = this.getDayAndMonth(this.state.currentWeek);
@@ -142,16 +155,19 @@ class ProviderList extends Component {
         </div>
         <div>
           { this.state.providers.map(provider =>
-            provider.availabilities.map(availability => (
-              <ProviderListItem
-                providerID={provider.id}
-                providerName={provider.name}
-                prices={provider.prices}
-                availability={availability}
-                selectedServices={this.props.selectedServices}
-                setProviderTimeAndPrice={this.props.setProviderTimeAndPrice}
-              />
-            )
+              provider.availabilities.map((availability) => {
+                const dateOfAvailability = this.generateRandomDate();
+                return (
+                  <ProviderListItem
+                    providerID={provider.id}
+                    providerName={provider.name}
+                    prices={provider.prices}
+                    availability={availability}
+                    selectedServices={this.props.selectedServices}
+                    setProviderTimeAndPrice={this.props.setProviderTimeAndPrice}
+                    date={dateOfAvailability}
+                  />
+                );}
           )) }
         </div>
       </div>
