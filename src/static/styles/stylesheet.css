@@ -71,6 +71,7 @@ body,
 }
 
 body {
+  color: #333;
   font: 400 16px 'Roboto', sans-serif;
   line-height: 1.5;
 }
@@ -507,14 +508,67 @@ button {
 9. Providers
 ======================= */
 
-#week-bar {
+.week-bar {
   margin-top: 0;
   background-color: #f2f2f2;
-  border-top: 1px solid #d6d6d6;
+  border-top: 2px solid #d6d6d6;
+  border-bottom: 2px solid #d6d6d6;
   color: #333333;
-  padding: 1rem;
-  position: relative;
   text-align: center;
+}
+
+.week-button {
+  background-color: transparent;
+  border: none;
+  color: #00d5c3;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.week-button_left {
+  float: left;
+  border-right: 1px solid #d6d6d6;
+}
+
+.week-button_right {
+  float: right;
+  border-left: 1px solid #d6d6d6;
+}
+
+.dates-display {
+  display: inline-block;
+  line-height: 4.25rem;
+  font-weight: 500;
+}
+
+.offer-number-banner {
+  padding: 1rem;
+  text-align: center;
+}
+
+.offer-number-banner stronger {
+  font-weight: 500;
+}
+
+.filter-options {
+}
+
+.filter-options div {
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 1rem;
+  width: 50%;
+}
+
+.time-search {
+  border-right: 1px solid #d6d6d6;
+}
+
+.sorted-by {
+
 }
 
 .provider-details_header {
@@ -693,7 +747,14 @@ button {
 
 .confirm-content {
   border-bottom: .5px solid #f2f2f2;
-  padding: 1rem;
+  padding: 1rem 0 2rem 1rem;
+  font: 400 15px 'Roboto', sans-serif;
+}
+
+.confirm-value {
+  position: absolute;
+  right: 5%;
+  font: 300 15px 'Roboto', sans-serif;
 }
 
 .confirm-bottom-button {
@@ -709,6 +770,11 @@ button {
   text-transform: uppercase;
   width: 100%;
 
+}
+
+.final {
+  background-color: #fffad3;
+  border-color: #e6dd9e;
 }
 
 
