@@ -42,7 +42,7 @@ class Register extends Component {
             <input type="password" className="block-input" onChange={this.handleChange} name="password" placeholder="Create password" />
             <input type="password" className="block-input" name="password-confirm" placeholder="Confirm password" />
           </div>
-          <Link className="register-bottom-button" to="/">Next</Link>
+          <Link className="register-bottom-button" to="confirm-order">Next</Link>
       </div>
 
     )
