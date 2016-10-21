@@ -77,6 +77,20 @@ button {
   cursor: pointer;
 }
 
+.bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
 
 
 /* =======================
@@ -619,20 +633,6 @@ button {
 
 .finish_order-number span {
   font-weight: 400;
-}
-
-.finish_bottom-button {
-  background-color: #00d5c3;
-  color: #fff;
-  display: block;
-  font-weight: 300;
-  padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
 }
 
 
