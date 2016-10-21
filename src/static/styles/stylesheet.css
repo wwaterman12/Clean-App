@@ -10,7 +10,10 @@ TABLE OF CONTENTS
 6. Landing
 7. Login
 8. Services
-9. Finish
+9. Providers
+10. Register
+11. Confirm Order
+12. Finish
 # Media Queries
 
 ======================= */
@@ -75,6 +78,20 @@ body {
 input[type=submit],
 button {
   cursor: pointer;
+}
+
+.bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 
@@ -208,7 +225,7 @@ button {
 }
 
 .landing_postal-code-validation-message {
-  color: #de0000;
+  color: #ff4b00;
   text-align: center;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
@@ -474,8 +491,10 @@ button {
   border-top: 2px solid #fff;
 }
 
+
+
 /* =======================
-9. Providers display
+9. Providers
 ======================= */
 
 #week-bar {
@@ -486,12 +505,116 @@ button {
   padding: 1rem;
   position: relative;
   text-align: center;
-
 }
+
+.provider-details_header {
+  background-color: #f2f2f2;
+  color: #333;
+  position: relative;
+  text-align: center;
+}
+
+.provider-details-title ,
+.provider-rating {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.provider-details-title {
+  padding-top: 1rem;
+}
+
+.provider-rating {
+  padding-bottom: 1rem;
+}
+
+.provider-details_header .provider-name {
+  font-size: 1.25rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.back-button {
+  color: #00d5c3;
+  font-size: 1.5rem;
+  height: 100%;
+  line-height: 6.875rem;
+  padding: 0 0.5rem;
+  position: absolute;
+  left: 0;
+  text-decoration: none;
+}
+
+.provider-image {
+  background: url('../images/cleanapp_osouji-masters.png') no-repeat center center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+          background-size: cover;
+  padding-bottom: 50%;
+}
+
+.provider-price,
+.best-price-tag {
+  display: inline-block;
+}
+
+.provider-price,
+.best-price-tag,
+.detail-link {
+  border-bottom: 2px solid #f2f2f2;
+  padding: 1rem;
+}
+
+.provider-price {
+  color: #ff4b00;
+  font-weight: bold;
+  width: 60%;
+}
+
+.list-price {
+  color: #d6d6d6;
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 0.5rem;
+  text-decoration: line-through;
+}
+
+.best-price-tag {
+  color: #00d5c3;
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+.detail-link {
+  color: #333;
+  display: block;
+  text-decoration: none;
+}
+
+.detail-link span {
+  color: #d6d6d6;
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  margin-top: -1rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.detail-link:hover,
+.detail-link:hover span {
+  background-color: #00d5c3;
+  color: #fff;
+}
+
+
 
 /* =======================
 10. Register
 ======================= */
+
 .register-heading {
   display: block;
   color: #333333;
@@ -544,7 +667,7 @@ button {
 }
 
 /* =======================
-11. confirm-order
+11. Confirm Order
 ======================= */
 
 .confirm-heading {
@@ -619,20 +742,6 @@ button {
 
 .finish_order-number span {
   font-weight: 400;
-}
-
-.finish_bottom-button {
-  background-color: #00d5c3;
-  color: #fff;
-  display: block;
-  font-weight: 300;
-  padding: 1rem;
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
 }
 
 
