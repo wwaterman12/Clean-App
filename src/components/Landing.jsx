@@ -26,7 +26,7 @@ class Landing extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   setSubmitButtonClass() {
-    if (this.state.localPostalCode.length > 0) {
+    if (this.state.localPostalCode.length === 7) {
       return 'submit-button--active';
     }
     return 'submit-button--inactive';
