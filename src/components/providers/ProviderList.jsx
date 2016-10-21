@@ -134,24 +134,25 @@ class ProviderList extends Component {
     const week = this.getDayAndMonth(this.state.currentWeek);
     return (
       <div>
-        <div id="week-bar">
+        <div className="week-bar clearfix">
           <button
-            id="left-week-button"
-            className="week-button"
+            className="week-button week-button_left"
             onClick={this.lastWeek}
           >◀</button>
-          <span id="dates-display">
+          <div className="dates-display">
             {`${week.startMonth}月${week.startDay}日~${week.endMonth}月${week.endDay}日`}
-          </span>
+          </div>
           <button
-            id="right-week-button"
-            className="week-button"
+            className="week-button week-button_right"
             onClick={this.nextWeek}
           >▶</button>
         </div>
-        <div id="filter-options">
-          <div>Advanced time search</div>
-          <div>Sorted by: Lowest price</div>
+        <div className="offer-number-banner">
+          We have <stronger>25</stronger> great offers for you
+        </div>
+        <div className="filter-options">
+          <div className="time-search">Advanced time search</div>
+          <div className="sorted-by">Sorted by: Lowest price</div>
         </div>
         <div>
           { this.state.providers.map(provider =>
@@ -167,7 +168,8 @@ class ProviderList extends Component {
                     setProviderTimeAndPrice={this.props.setProviderTimeAndPrice}
                     date={dateOfAvailability}
                   />
-                );}
+                );
+              }
           )) }
         </div>
       </div>
