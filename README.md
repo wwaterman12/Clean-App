@@ -17,7 +17,6 @@ ROUTES
         </Route>
       </Router>
 
-
 COMPONENTS
 main (header+menu)
 landing (zip input)

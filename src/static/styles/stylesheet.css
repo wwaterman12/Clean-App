@@ -333,7 +333,6 @@ button {
 }
 
 .login-form input[type=submit] {
-  background-color: #00d5c3;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -344,7 +343,13 @@ button {
   width: 100%;
 }
 
+.login-submit-button--active {
+  background-color: #00d5c3;
+}
 
+.login-submit-button--inactive {
+  background-color: #f2f2f2;
+}
 
 /* =======================
 8. Services
@@ -461,7 +466,6 @@ button {
 }
 
 .service-bottom-button {
-  background-color: #00d5c3;
   color: #fff;
   display: block;
   padding: 1rem;
@@ -471,6 +475,14 @@ button {
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+}
+
+.service-bottom-button--active {
+  background-color: #00d5c3;
+}
+
+.service-bottom-button--inactive {
+  background-color: #f2f2f2;
 }
 
 .service-incrementor {

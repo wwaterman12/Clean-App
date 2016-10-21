@@ -10,41 +10,21 @@ const propTypes = {
 
 
 class Services extends Component {
-  constructor() {
+  constructor () {
     super();
     this.state = {
-      airCondition1: 0,
-      airCondition2: 0,
-      rangeHood: 0,
-      bathroom: 0,
-      toilet: 0,
+      buttonClass: 'service-bottom-button--inactive',
     };
-    this.increaseCount = this.increaseCount.bind(this);
-    this.decreaseCount = this.decreaseCount.bind(this);
   }
-  increaseCount(serviceName) {
-    Object.keys(this.state).forEach((stateKey) => {
-      if (stateKey === serviceName) {
-        const currentValue = this.state[stateKey];
-        const nextValue = currentValue + 1;
-        const newState = {};
-        newState[stateKey] = nextValue;
-        this.setState(newState);
-      }
-    });
-  }
-  decreaseCount(serviceName) {
-    Object.keys(this.state).forEach((stateKey) => {
-      if (stateKey === serviceName) {
-        const currentValue = this.state[stateKey];
-        if (currentValue > 0) {
-          const nextValue = currentValue - 1;
-          const newState = {};
-          newState[stateKey] = nextValue;
-          this.setState(newState);
-        }
-      }
-    });
+  setSubmitButtonClass () {
+    const { airCondition1, airCondition2, rangeHood, bathroom, toilet }
+      = this.props.selectedServices;
+    if ((airCondition1 || airCondition2 || rangeHood || bathroom || toilet) > 0) {
+      return 'service-bottom-button--active';
+    }
+    else {
+      return 'service-bottom-button--inactive';
+    }
   }
   render() {
     return (
@@ -82,7 +62,7 @@ class Services extends Component {
         />
         <Link
           onClick={this.handleSelections}
-          className="service-bottom-button"
+          className={`service-bottom-button ${this.setSubmitButtonClass()}`}
           to="providers"
         >
         Next
