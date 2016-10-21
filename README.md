@@ -17,17 +17,6 @@ ROUTES
         </Route>
       </Router>
 
-      setSubmitButtonClass () {
-    const { airCondition1, airCondition2, rangeHood, bathroom, toilet } = this.state;
-    if ((airCondition1 || airCondition2 || rangeHood || bathroom || toilet) > 0) {
-      return 'service-bottom-button--active';
-    }
-    else {
-      return 'service-bottom-button--inactive';
-    }
-  }
-
-
 COMPONENTS
 main (header+menu)
 landing (zip input)

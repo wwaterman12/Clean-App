@@ -321,7 +321,6 @@ button {
 }
 
 .login-form input[type=submit] {
-  background-color: #00d5c3;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -332,7 +331,13 @@ button {
   width: 100%;
 }
 
+.login-submit-button--active {
+  background-color: #00d5c3;
+}
 
+.login-submit-button--inactive {
+  background-color: #f2f2f2;
+}
 
 /* =======================
 8. Services
