@@ -16,7 +16,7 @@ class ConfirmOrder extends Component {
     this.setState( {
       date: '2016/4/27',
       time: '10:00~12:00',
-      content: 'Air Conditioning (1)',
+      content: 'Air Conditioning(1)',
       normalPrice: 13800,
       discount: 3000,
       finalPrice: 10800,
@@ -38,7 +38,7 @@ class ConfirmOrder extends Component {
           <p>normal price<span className="confirm-value">{this.state.normalPrice}</span></p>
           <p>Cleanapp discount<span className="confirm-value">{this.state.discount}</span></p>
         </div>
-        <div className="confirm-content">
+        <div className="confirm-content final">
           <p>Your final price<span className="confirm-value">{this.state.finalPrice}</span></p>
         </div>
         <Link className="confirm-bottom-button" to="/">Next</Link>
