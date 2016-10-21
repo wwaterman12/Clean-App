@@ -557,8 +557,47 @@ button {
   border-right: 1px solid #d6d6d6;
 }
 
-.sorted-by {
+.provider-list-link {
+  display: block;
+}
 
+.provider-list_image-container,
+.provider-list_details-container {
+  display: inline-block;
+}
+
+.provider-list_image-container {
+  position: relative;
+  width: 30%;
+}
+
+.provider-list_image {
+  background: url('../images/cleanapp_osouji-masters_thumb.png') no-repeat center center;
+  background-size: cover;
+  display: block;
+  margin-top: 0.5rem;
+  padding-bottom: 100%;
+  width: 100%;
+}
+
+
+.provider-list_best-price-tag {
+  background-color: #00d5c3;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.125rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.provider-list_details {
+  color: #333;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
 }
 
 .provider-details_header {
@@ -568,7 +607,7 @@ button {
   text-align: center;
 }
 
-.provider-details-title ,
+.provider-details-title,
 .provider-rating {
   font-size: 1rem;
   font-weight: normal;
