@@ -8,6 +8,7 @@ const propTypes = {
   availability: React.PropTypes.object,
   selectedServices: React.PropTypes.object,
   setProviderTimeAndPrice: React.PropTypes.func,
+  date: React.PropTypes.object,
 };
 
 class ProviderListItem extends Component {
@@ -33,9 +34,11 @@ class ProviderListItem extends Component {
   }
   render() {
     const totalPrice = this.sumPrices();
+    const { day, month } = this.props.date;
     return (
       <Link to={`/providers/${this.props.providerID}`} onClick={this.handleSelect}>
         <h3>{this.props.providerName}</h3>
+        <p>{month} ~ {day}</p>
         <p>{`${this.props.availability.start}—${this.props.availability.end}`}</p>
         <p>Price: ${totalPrice}</p>
       </Link>
