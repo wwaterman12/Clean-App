@@ -7,7 +7,7 @@ class ConfirmOrder extends Component {
 
     return (
       <div>
-        <h3 className="confirm-heading">Please confirm your order</h3>
+        <h3 className="heading">Please confirm your order</h3>
         <div className="confirm-content">
           <p>Service time<span></span></p>
         </div>
@@ -21,7 +21,7 @@ class ConfirmOrder extends Component {
         <div className="confirm-content">
           <p>Your final price<span></span></p>
         </div>
-        <Link className="confirm-bottom-button" to="/">Next</Link>
+        <Link className="confirm-bottom-button" to="/payment">Next</Link>
       </div>
     )
   }

@@ -30,7 +30,7 @@ class Register extends Component {
   render() {
     return (
       <div>
-        <h3 className="register-heading">Fill in your information</h3>
+        <h3 className="heading">Fill in your information</h3>
           <div className="register-form">
             <input type="text" className="in-line-input" onChange={this.handleChange} name="lastKanji" placeholder="Last name (Kanji)" />
             <input type="text" className="in-line-input" onChange={this.handleChange} name="firstKanji" placeholder="First name (Kanji)" />
