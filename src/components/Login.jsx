@@ -7,14 +7,16 @@ class Login extends Component {
     this.state = {
       email: false,
       password: false,
-    }
+    };
+    this.isPasswordInput = this.isPasswordInput.bind(this);
+    this.isEmailInput = this.isEmailInput.bind(this);
   }
   static handleSubmit(e) {
     e.preventDefault();
     hashHistory.push('/services');
   }
   isEmailInput (e) {
-    if (e.target.value) {
+    if (e.target.value.length > 0) {
       this.setState({
         email: true,
       });
@@ -26,7 +28,7 @@ class Login extends Component {
     }
   }
   isPasswordInput (e) {
-    if (e.target.value) {
+    if (e.target.value.length > 0) {
       this.setState({
         password: true,
       });
