@@ -36,11 +36,20 @@ class ProviderListItem extends Component {
     const totalPrice = this.sumPrices();
     const { day, month } = this.props.date;
     return (
-      <Link to={`/providers/${this.props.providerID}`} onClick={this.handleSelect}>
-        <h3>{this.props.providerName}</h3>
-        <p>{month} ~ {day}</p>
-        <p>{`${this.props.availability.start}—${this.props.availability.end}`}</p>
-        <p>Price: ${totalPrice.toLocaleString()}</p>
+      <Link className="provider-list-link" to={`/providers/${this.props.providerID}`} onClick={this.handleSelect}>
+        <div className="provider-list_image-container">
+          <div className="provider-list_image" />
+          <div className="provider-list_best-price-tag">Best Price</div>
+        </div>
+        <div className="provider-list_details-container">
+          <div className="provider-list_details">
+            <p><strong>
+            {month}月{day}日 {`${this.props.availability.start}~${this.props.availability.end}`}
+            </strong></p>
+            <p>{this.props.providerName}</p>
+            <p>Price: ${totalPrice.toLocaleString()}</p>
+          </div>
+        </div>
       </Link>
     );
   }
