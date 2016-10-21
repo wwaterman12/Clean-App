@@ -40,7 +40,7 @@ class ProviderListItem extends Component {
         <h3>{this.props.providerName}</h3>
         <p>{month} ~ {day}</p>
         <p>{`${this.props.availability.start}—${this.props.availability.end}`}</p>
-        <p>Price: ${totalPrice}</p>
+        <p>Price: ${totalPrice.toLocaleString()}</p>
       </Link>
     );
   }
