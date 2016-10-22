@@ -830,9 +830,62 @@ button {
   border-color: #e6dd9e;
 }
 
-
 /* =======================
-12. Finish
+12. Payment
+======================= */
+
+.cc-icons {
+  padding-top: 2rem;
+}
+
+.cc-image {
+  margin-left: 7.5%;
+}
+
+.cc-input {
+  margin-top: 6%;
+  height: 40px;
+  width: 90%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+.expiration-input {
+  display: inline-block;
+  margin-top: 6%;
+  height: 40px;
+  width: 50%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.cvc-input {
+  display: inline-block;
+  margin-top: 6%;
+  height: 40px;
+  width: 34%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.terms {
+  padding-top: 60%;
+  text-align: center;
+  font-size: 14px;
+  color: #d6d6d6;
+}
+
+.terms-link {
+  color: #00d5c3;
+}
+/* =======================
+13. Finish
 ======================= */
 
 .finish-container {
