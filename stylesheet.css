@@ -1,0 +1,943 @@
+/* =======================
+
+TABLE OF CONTENTS
+
+1. Color Palette
+2. Reset Styles
+3. Global Styles
+4. Navs
+5. Main
+6. Landing
+7. Login
+8. Services
+9. Providers
+10. Register
+11. Confirm Order
+12. Finish
+# Media Queries
+
+======================= */
+
+
+
+/* =======================
+1. Color Palette
+
+teal:           00d5c3
+red:            ff3e00
+light gray:     f2f2f2
+medium gray:    d6d6d6
+dark gray:      989898
+black:          333333
+
+======================= */
+
+
+
+/* =======================
+2. Reset Styles
+======================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+button,
+input {
+  font: inherit;
+  -webkit-appearance: none;
+}
+
+
+
+/* =======================
+3. Global Styles
+======================= */
+
+html,
+body,
+#root,
+.app-container,
+.main-container {
+  height: 100%;
+}
+
+body {
+  color: #333;
+  font: 400 16px 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+input[type=submit],
+button {
+  cursor: pointer;
+}
+
+.bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.heading {
+  margin-top: 0;
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
+  color: #333333;
+  display: block;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+  font-size:
+
+}
+
+
+/* =======================
+4. Navs
+======================= */
+
+.menu {
+  background-color: #fbfbfb;
+  min-height: 10%;
+}
+
+.top-nav {
+  background-color: #fbfbfb;
+  position: relative;
+  top: 0;
+}
+
+.top-nav .logo-icon img {
+  margin: auto 0;
+  position: absolute;
+  top: 0%; right: 0%; bottom: 0%; left: 3%;
+  width: 13%;
+}
+
+.top-nav .logotype img {
+  margin: auto;
+  position: absolute;
+  top: 0%; right: 0%; bottom: 0%; left: 0%;
+  width: 30%;
+}
+
+.top-nav .hamburger {
+  background-color: transparent;
+  border: none;
+  color: #00d5c3;
+  cursor: pointer;
+  font-size: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  margin: auto 0;
+  position: absolute;
+  top: 0%; right: 3%; bottom: 0%;
+  -webkit-appearance: none;
+}
+
+.nav-item {
+  background-color: #f2f2f2;
+  color: #00d5c3;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: height 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.nav-item:hover {
+  background-color: #00d5c3;
+  color: #fff;
+}
+
+.nav-item--bottom {
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.nav-item--closed {
+  border: none;
+  height: 0;
+}
+
+.nav-item--open {
+  border-top: 1px solid #d6d6d6;
+  height: 3rem;
+  padding: 1rem;
+}
+
+
+
+/* =======================
+5. Main
+======================= */
+
+.main-child {
+  height: 90%;
+}
+
+
+
+/* =======================
+6. Landing
+======================= */
+
+.landing-container,
+.login-container {
+  background: url('./images/cleanapp_landing-background.png') no-repeat center center scroll;
+  background-size: cover;
+  position: relative;
+}
+
+.landing-content {
+  padding: 5rem 2.5rem;
+}
+
+.landing_header,
+.landing_subhead,
+.landing_postal-code-label  {
+  color: #fff;
+  text-align: center;
+}
+
+.landing_header {
+  font-weight: 400;
+}
+
+.landing_subhead,
+.landing_postal-code-label {
+  font-weight: 300;
+}
+
+.landing_subhead {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+.landing_postal-code-label {
+  margin-bottom: 1rem;
+}
+
+.landing_postal-code-validation-message {
+  color: #ff4b00;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.postal-code-form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.postal-code-form input {
+  border: none;
+  font: 400 1rem 'Roboto', sans-serif;
+  padding: 1rem;
+}
+
+.postal-code-form input[type=number] {
+  width: 67%;
+}
+
+.postal-code-form input[type=number]::-webkit-inner-spin-button,
+.postal-code-form input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.postal-code-form .submit-button {
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  width: 33%;
+}
+
+.postal-code-form .submit-button--inactive {
+  background-color: #f2f2f2;
+  border-left: 1px solid #d6d6d6;
+  color: #989898;
+}
+
+.postal-code-form .submit-button--active {
+  background-color: #00d5c3;
+  border-left: 1px solid #00d5c3;
+  color: #fff;
+}
+
+
+
+/* =======================
+7. Login
+======================= */
+
+.login-header {
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.login-form {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.login-form_content {
+  align-self: center;
+  width: 100%;
+}
+
+.login-form input {
+  display: block;
+}
+
+.login-form_inputs {
+  margin: 4rem auto;
+}
+
+.login-form_inputs input {
+  border: none;
+  border-radius: 2px;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  width: 80%;
+}
+
+.login-form_password-link {
+  color: #fff;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.login-form input[type=submit] {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.login-submit-button--active {
+  background-color: #00d5c3;
+}
+
+.login-submit-button--inactive {
+  background-color: #f2f2f2;
+}
+
+/* =======================
+8. Services
+======================= */
+
+.service-list-container {
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+
+.service-list-offerings {
+}
+
+.service-list-header {
+  margin-top: 0;
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
+  color: #333333;
+  display: block;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.service-offering {
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  background-color: #fbfbfb;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-flex: 1;
+  flex: 1;
+  height: 20%;
+  overflow: hidden;
+}
+
+.service-image,
+.service-text,
+.service-count {
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+.service-image {
+  flex: 1;
+  height: 100%;
+  padding: 1.5rem;
+  width: 25%;
+}
+
+.service-image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.service-text {
+  flex: 5;
+}
+
+.service-name {
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.service-description {
+  font-size: 0.75rem;
+  color: #989898;
+}
+
+.service-description a {
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: #00d5c3;
+}
+
+.service-count {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.service-count-button {
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+  height: 0%;
+  width: 0%;
+  padding-left: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+.service-count-button--selected {
+  background-color: #00d5c3;
+  border-color: #00d5c3;
+  color: #fff;
+}
+
+.service-button-content {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  position: absolute;
+  top: calc(50% - 0.625rem);
+  left: calc(50% - 0.3511rem);
+}
+
+.service-bottom-button {
+  color: #fff;
+  display: block;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.service-bottom-button--active {
+  background-color: #00d5c3;
+}
+
+.service-bottom-button--inactive {
+  background-color: #f2f2f2;
+}
+
+.service-incrementor {
+  -webkit-flex: 1;
+          flex: 1;
+}
+
+.service-incrementor--hidden {
+  display: none;
+}
+
+.service-incrementor--shown {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+}
+
+.service-incrementor button {
+  background-color: #00d5c3;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.service-incrementor .down {
+  border-top: 2px solid #fff;
+}
+
+
+
+/* =======================
+9. Providers
+======================= */
+
+.week-bar {
+  margin-top: 0;
+  background-color: #f2f2f2;
+  border-top: 2px solid #d6d6d6;
+  border-bottom: 2px solid #d6d6d6;
+  color: #333333;
+  text-align: center;
+}
+
+.week-button {
+  background-color: transparent;
+  border: none;
+  color: #00d5c3;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.week-button_left {
+  float: left;
+  border-right: 1px solid #d6d6d6;
+}
+
+.week-button_right {
+  float: right;
+  border-left: 1px solid #d6d6d6;
+}
+
+.dates-display {
+  display: inline-block;
+  line-height: 4.25rem;
+  font-weight: 500;
+}
+
+.offer-number-banner {
+  padding: 1rem;
+  text-align: center;
+}
+
+.offer-number-banner stronger {
+  font-weight: 500;
+}
+
+.filter-options {
+}
+
+.filter-options div {
+  background-color: #f2f2f2;
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 1rem;
+  width: 50%;
+}
+
+.time-search {
+  border-right: 1px solid #d6d6d6;
+}
+
+.provider-list-link {
+  display: block;
+}
+
+.provider-list_image-container,
+.provider-list_details-container {
+  display: inline-block;
+}
+
+.provider-list_image-container {
+  position: relative;
+  width: 30%;
+}
+
+.provider-list_image {
+  background: url('./images/cleanapp_osouji-masters_thumb.png') no-repeat center center;
+  background-size: cover;
+  display: block;
+  margin-top: 0.5rem;
+  padding-bottom: 100%;
+  width: 100%;
+}
+
+
+.provider-list_best-price-tag {
+  background-color: #00d5c3;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.125rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.provider-list_details {
+  color: #333;
+  font-size: 0.75rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.provider-details_header {
+  background-color: #f2f2f2;
+  color: #333;
+  position: relative;
+  text-align: center;
+}
+
+.provider-details-title,
+.provider-rating {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.provider-details-title {
+  padding-top: 1rem;
+}
+
+.provider-rating {
+  padding-bottom: 1rem;
+}
+
+.provider-details_header .provider-name {
+  font-size: 1.25rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.back-button {
+  color: #00d5c3;
+  font-size: 1.5rem;
+  height: 100%;
+  line-height: 6.875rem;
+  padding: 0 0.5rem;
+  position: absolute;
+  left: 0;
+  text-decoration: none;
+}
+
+.provider-image {
+  background: url('./images/cleanapp_osouji-masters.png') no-repeat center center;
+  -webkit-background-size: cover;
+     -moz-background-size: cover;
+          background-size: cover;
+  padding-bottom: 50%;
+}
+
+.provider-price,
+.best-price-tag {
+  display: inline-block;
+}
+
+.provider-price,
+.best-price-tag,
+.detail-link {
+  border-bottom: 2px solid #f2f2f2;
+  padding: 1rem;
+}
+
+.provider-price {
+  color: #ff4b00;
+  font-weight: bold;
+  width: 60%;
+}
+
+.list-price {
+  color: #d6d6d6;
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 0.5rem;
+  text-decoration: line-through;
+}
+
+.best-price-tag {
+  color: #00d5c3;
+  font-weight: bold;
+  text-align: right;
+  text-transform: uppercase;
+  width: 40%;
+}
+
+.detail-link {
+  color: #333;
+  display: block;
+  text-decoration: none;
+}
+
+.detail-link span {
+  color: #d6d6d6;
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  margin-top: -1rem;
+  position: absolute;
+  right: 1rem;
+}
+
+.detail-link:hover,
+.detail-link:hover span {
+  background-color: #00d5c3;
+  color: #fff;
+}
+
+
+
+/* =======================
+10. Register
+======================= */
+
+.heading {
+  display: block;
+  color: #333333;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f2f2f2;
+  font-size: 16px;
+
+}
+
+.register-form {
+  text-align: center;
+}
+
+.in-line-input {
+  display: inline-block;
+  margin-top: 6%;
+  height: 40px;
+  width: 42%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.block-input {
+  margin-top: 6%;
+  height: 40px;
+  width: 90%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.register-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+}
+
+/* =======================
+11. Confirm Order
+======================= */
+
+.confirm-heading {
+  display: block;
+  color: #333333;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  background-color: #f2f2f2;
+  font: 400 20px 'Roboto', sans-serif;
+
+}
+
+.confirm-content {
+  border-bottom: .5px solid #f2f2f2;
+  padding: 1rem 0 2rem 1rem;
+  font: 400 15px 'Roboto', sans-serif;
+}
+
+.confirm-value {
+  position: absolute;
+  right: 5%;
+  font: 300 15px 'Roboto', sans-serif;
+}
+
+.confirm-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+
+}
+
+.final {
+  background-color: #fffad3;
+  border-color: #e6dd9e;
+}
+
+/* =======================
+12. Payment
+======================= */
+
+.cc-icons {
+  padding-top: 2rem;
+}
+
+.cc-image {
+  margin-left: 7.5%;
+}
+
+.cc-input {
+  margin-top: 6%;
+  height: 40px;
+  width: 90%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+.expiration-input {
+  display: inline-block;
+  margin-top: 6%;
+  height: 40px;
+  width: 50%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.cvc-input {
+  display: inline-block;
+  margin-top: 6%;
+  height: 40px;
+  width: 34%;
+  margin-left: 3%;
+  margin-right: 3%;
+  border: .5px solid #f2f2f2;
+  padding: 3%;
+  font-size: 12px;
+}
+
+.terms {
+  padding-top: 60%;
+  text-align: center;
+  font-size: 14px;
+  color: #d6d6d6;
+}
+
+.terms-link {
+  color: #00d5c3;
+}
+/* =======================
+13. Finish
+======================= */
+
+.finish-container {
+  color: #989898;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.finish-content {
+  align-self: center;
+  margin: -5rem 17.5% 0;
+  text-align: center;
+}
+
+.finish-content p {
+  font-weight: 300;
+  padding-top: 1.5rem;
+}
+
+.finish_thank-you {
+  display: block;
+  color: #989898;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.finish_checkmark {
+  width: 24%;
+}
+
+.finish_order-number {
+  text-transform: uppercase;
+}
+
+.finish_order-number span {
+  font-weight: 400;
+}
+
+
+
+/* =======================
+# Media Queries
+======================= */
+
+@media (min-width: 470px) {
+  .top-nav .logotype img {
+    width: 8.75rem;
+  }
+
+  .top-nav .logo-icon img {
+    width: 2.25rem;
+  }
+}
