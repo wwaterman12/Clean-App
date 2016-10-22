@@ -28805,11 +28805,6 @@
 	  }, {
 	    key: 'setSubmitButtonClass',
 	    value: function setSubmitButtonClass() {
-	      console.log('testing 123');
-	      // const { lastKanji, firstKanji, lastKana, firstKana, email, streetAddress, password }
-	      // = this.state;
-	      //console.log(email);
-	      console.log('testing 123');
 	      if ((this.state.lastKanji.length > 0 && this.state.firstKanji.length > 0 || this.state.lastKana.length > 0 && this.state.firstKana.length > 0) && this.state.email.length > 0 && this.state.streetAddress.length > 0 && this.state.password.length > 0) {
 	        return 'register-bottom-button--active';
 	      } else {
@@ -28819,7 +28814,6 @@
 	  }, {
 	    key: 'handleChange',
 	    value: function handleChange(e) {
-	      console.log('handle change hit');
 	      var input = e.target;
 	      var inputName = input.getAttribute('name');
 	      var updated = {};
@@ -28995,6 +28989,7 @@
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'confirm-value' },
+	              '\xA5',
 	              this.state.finalPrice
 	            )
 	          )
