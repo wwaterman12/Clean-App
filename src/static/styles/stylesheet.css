@@ -768,6 +768,12 @@ button {
   font-size: 12px;
 }
 
+.city {
+  background-color: #99ff99;
+  color: #00b300;
+  text-align: center;
+}
+
 .register-bottom-button {
   color: #fff;
   display: block;

@@ -10,7 +10,6 @@ class Register extends Component {
       lastKana: '',
       firstKana: '',
       email: '',
-      cityAdress: '',
       streetAddress: '',
       password: '',
     }
@@ -53,7 +52,7 @@ class Register extends Component {
             <input type="text" className="in-line-input" onChange={this.handleChange} name="lastKana" placeholder="Last name (Kana)" />
             <input type="text" className="in-line-input" onChange={this.handleChange} name="firstKana" placeholder="First name (Kana)" />
             <input type="email" className="block-input" onChange={this.handleChange} name="email" placeholder="email" />
-            <input type="text" className="block-input" onChange={this.handleChange} name="cityAddress" placeholder="City and Ku" />
+            <input type="text" className="block-input city" value="川崎市中原区" />
             <input type="text" className="block-input" onChange={this.handleChange} name="streetAddress" placeholder="Street address" />
             <input type="password" className="block-input" onChange={this.handleChange} name="password" placeholder="Create password" />
             <input type="password" className="block-input" name="password-confirm" placeholder="Confirm password" />
