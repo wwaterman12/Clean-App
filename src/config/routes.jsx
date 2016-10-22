@@ -10,6 +10,7 @@ import ProviderList from '../components/providers/ProviderList.jsx';
 import ProviderDetails from '../components/providers/ProviderDetails.jsx';
 import Register from '../components/register.jsx';
 import ConfirmOrder from '../components/confirmorder.jsx';
+import Payment from '../components/Payment.jsx';
 
 const Routes = () => (
   <Router history={hashHistory} >
@@ -32,6 +33,7 @@ const Routes = () => (
       </Route>
       <Route path="register" component={Register} />
       <Route path ="confirm-order" component={ConfirmOrder} />
+      <Route path="payment" component={Payment} />
     </Route>
   </Router>
 );

@@ -29,7 +29,7 @@ class Services extends Component {
   render() {
     return (
       <div className="service-list-container">
-        <p className="service-list-header">Select desired cleaning services</p>
+        <p className="heading">Select desired cleaning services</p>
         <Service
           serviceType="airCondition1"
           count={this.props.selectedServices.airCondition1}
