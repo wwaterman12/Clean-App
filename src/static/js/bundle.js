@@ -28789,7 +28789,6 @@
 	      lastKana: '',
 	      firstKana: '',
 	      email: '',
-	      cityAdress: '',
 	      streetAddress: '',
 	      password: ''
 	    };
@@ -28825,7 +28824,7 @@
 	          _react2.default.createElement('input', { type: 'text', className: 'in-line-input', onChange: this.handleChange, name: 'lastKana', placeholder: 'Last name (Kana)' }),
 	          _react2.default.createElement('input', { type: 'text', className: 'in-line-input', onChange: this.handleChange, name: 'firstKana', placeholder: 'First name (Kana)' }),
 	          _react2.default.createElement('input', { type: 'email', className: 'block-input', onChange: this.handleChange, name: 'email', placeholder: 'email' }),
-	          _react2.default.createElement('input', { type: 'text', className: 'block-input', onChange: this.handleChange, name: 'cityAddress', placeholder: 'City and Ku' }),
+	          _react2.default.createElement('input', { type: 'text', className: 'block-input city', value: '\u5DDD\u5D0E\u5E02\u4E2D\u539F\u533A' }),
 	          _react2.default.createElement('input', { type: 'text', className: 'block-input', onChange: this.handleChange, name: 'streetAddress', placeholder: 'Street address' }),
 	          _react2.default.createElement('input', { type: 'password', className: 'block-input', onChange: this.handleChange, name: 'password', placeholder: 'Create password' }),
 	          _react2.default.createElement('input', { type: 'password', className: 'block-input', name: 'password-confirm', placeholder: 'Confirm password' })
