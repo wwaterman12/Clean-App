@@ -28793,10 +28793,36 @@
 	      password: ''
 	    };
 	    _this.handleChange = _this.handleChange.bind(_this);
+	    _this.setSubmitButtonClass = _this.setSubmitButtonClass.bind(_this);
 	    return _this;
 	  }
 	
 	  _createClass(Register, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      console.log('mounted');
+	    }
+	  }, {
+	    key: 'setSubmitButtonClass',
+	    value: function setSubmitButtonClass() {
+	      var _state = this.state;
+	      var lastKanji = _state.lastKanji;
+	      var firstKanji = _state.firstKanji;
+	      var lastKana = _state.lastKana;
+	      var firstKana = _state.firstKana;
+	      var email = _state.email;
+	      var cityAddress = _state.cityAddress;
+	      var streetAddress = _state.streetAddress;
+	      var password = _state.password;
+	
+	      console.log(email);
+	      if ((lastKanji.length > 0 && firstKanji.length > 0 || lastKana.length > 0 && firstKana.length > 0) && email.length > 0 && cityAddress.length > 0 && streetAddress.length > 0 && password.length > 0) {
+	        return 'register-bottom-button--active';
+	      } else {
+	        return 'register-bottom-button--inactive';
+	      }
+	    }
+	  }, {
 	    key: 'handleChange',
 	    value: function handleChange(e) {
 	      var input = e.target;
@@ -28831,7 +28857,7 @@
 	        ),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { className: 'register-bottom-button', to: 'confirm-order' },
+	          { className: 'register-bottom-button ' + this.setSubmitButtonClass(), to: 'confirm-order' },
 	          'Next'
 	        )
 	      );
@@ -29083,7 +29109,7 @@
 	        ),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { className: 'bottom-button', to: 'finish' },
+	          { className: 'payment-bottom-button', to: 'finish' },
 	          'Make Payment'
 	        )
 	      );
