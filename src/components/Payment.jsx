@@ -21,8 +21,7 @@ class Payment extends Component {
   }
 
   setSubmitButtonClass () {
-    const { ccNumber, expiration, CVC } = this.state;
-    if ((ccNumber > 0) && (expiration > 0) && (CVC > 0)) {
+    if ((this.state.ccNumber.length > 0) && (this.state.expiration.length > 0) && (this.state.CVC.length > 0)) {
       return 'payment-bottom-button--active';
     }
     else {
