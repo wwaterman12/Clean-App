@@ -28805,18 +28805,12 @@
 	  }, {
 	    key: 'setSubmitButtonClass',
 	    value: function setSubmitButtonClass() {
-	      var _state = this.state;
-	      var lastKanji = _state.lastKanji;
-	      var firstKanji = _state.firstKanji;
-	      var lastKana = _state.lastKana;
-	      var firstKana = _state.firstKana;
-	      var email = _state.email;
-	      var cityAddress = _state.cityAddress;
-	      var streetAddress = _state.streetAddress;
-	      var password = _state.password;
-	
-	      console.log(email);
-	      if ((lastKanji.length > 0 && firstKanji.length > 0 || lastKana.length > 0 && firstKana.length > 0) && email.length > 0 && cityAddress.length > 0 && streetAddress.length > 0 && password.length > 0) {
+	      console.log('testing 123');
+	      // const { lastKanji, firstKanji, lastKana, firstKana, email, streetAddress, password }
+	      // = this.state;
+	      //console.log(email);
+	      console.log('testing 123');
+	      if ((this.state.lastKanji.length > 0 && this.state.firstKanji.length > 0 || this.state.lastKana.length > 0 && this.state.firstKana.length > 0) && this.state.email.length > 0 && this.state.streetAddress.length > 0 && this.state.password.length > 0) {
 	        return 'register-bottom-button--active';
 	      } else {
 	        return 'register-bottom-button--inactive';
@@ -28825,6 +28819,7 @@
 	  }, {
 	    key: 'handleChange',
 	    value: function handleChange(e) {
+	      console.log('handle change hit');
 	      var input = e.target;
 	      var inputName = input.getAttribute('name');
 	      var updated = {};

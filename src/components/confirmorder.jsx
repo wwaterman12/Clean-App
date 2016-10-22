@@ -39,7 +39,7 @@ class ConfirmOrder extends Component {
           <p>Cleanapp discount<span className="confirm-value">{this.state.discount}</span></p>
         </div>
         <div className="confirm-content final">
-          <p>Your final price<span className="confirm-value">{this.state.finalPrice}</span></p>
+          <p>Your final price<span className="confirm-value">¥{this.state.finalPrice}</span></p>
         </div>
         <Link className="confirm-bottom-button" to="/payment">Next</Link>
       </div>
