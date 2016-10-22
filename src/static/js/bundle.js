@@ -28789,7 +28789,6 @@
 	      lastKana: '',
 	      firstKana: '',
 	      email: '',
-	      cityAdress: '',
 	      streetAddress: '',
 	      password: ''
 	    };
@@ -28806,18 +28805,7 @@
 	  }, {
 	    key: 'setSubmitButtonClass',
 	    value: function setSubmitButtonClass() {
-	      var _state = this.state;
-	      var lastKanji = _state.lastKanji;
-	      var firstKanji = _state.firstKanji;
-	      var lastKana = _state.lastKana;
-	      var firstKana = _state.firstKana;
-	      var email = _state.email;
-	      var cityAddress = _state.cityAddress;
-	      var streetAddress = _state.streetAddress;
-	      var password = _state.password;
-	
-	      console.log(email);
-	      if ((lastKanji.length > 0 && firstKanji.length > 0 || lastKana.length > 0 && firstKana.length > 0) && email.length > 0 && cityAddress.length > 0 && streetAddress.length > 0 && password.length > 0) {
+	      if ((this.state.lastKanji.length > 0 && this.state.firstKanji.length > 0 || this.state.lastKana.length > 0 && this.state.firstKana.length > 0) && this.state.email.length > 0 && this.state.streetAddress.length > 0 && this.state.password.length > 0) {
 	        return 'register-bottom-button--active';
 	      } else {
 	        return 'register-bottom-button--inactive';
@@ -28851,7 +28839,7 @@
 	          _react2.default.createElement('input', { type: 'text', className: 'in-line-input', onChange: this.handleChange, name: 'lastKana', placeholder: 'Last name (Kana)' }),
 	          _react2.default.createElement('input', { type: 'text', className: 'in-line-input', onChange: this.handleChange, name: 'firstKana', placeholder: 'First name (Kana)' }),
 	          _react2.default.createElement('input', { type: 'email', className: 'block-input', onChange: this.handleChange, name: 'email', placeholder: 'email' }),
-	          _react2.default.createElement('input', { type: 'text', className: 'block-input', onChange: this.handleChange, name: 'cityAddress', placeholder: 'City and Ku' }),
+	          _react2.default.createElement('input', { type: 'text', className: 'block-input city', value: '\u5DDD\u5D0E\u5E02\u4E2D\u539F\u533A' }),
 	          _react2.default.createElement('input', { type: 'text', className: 'block-input', onChange: this.handleChange, name: 'streetAddress', placeholder: 'Street address' }),
 	          _react2.default.createElement('input', { type: 'password', className: 'block-input', onChange: this.handleChange, name: 'password', placeholder: 'Create password' }),
 	          _react2.default.createElement('input', { type: 'password', className: 'block-input', name: 'password-confirm', placeholder: 'Confirm password' })
@@ -29001,6 +28989,7 @@
 	            _react2.default.createElement(
 	              'span',
 	              { className: 'confirm-value' },
+	              '\xA5',
 	              this.state.finalPrice
 	            )
 	          )
