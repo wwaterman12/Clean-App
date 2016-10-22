@@ -203,7 +203,7 @@ button {
 
 .landing-container,
 .login-container {
-  background: url('../images/cleanapp_landing-background.png') no-repeat center center scroll;
+  background: url('./images/cleanapp_landing-background.png') no-repeat center center scroll;
   background-size: cover;
   position: relative;
 }
@@ -596,7 +596,7 @@ button {
 }
 
 .provider-list_image {
-  background: url('../images/cleanapp_osouji-masters_thumb.png') no-repeat center center;
+  background: url('./images/cleanapp_osouji-masters_thumb.png') no-repeat center center;
   background-size: cover;
   display: block;
   margin-top: 0.5rem;
@@ -663,7 +663,7 @@ button {
 }
 
 .provider-image {
-  background: url('../images/cleanapp_osouji-masters.png') no-repeat center center;
+  background: url('./images/cleanapp_osouji-masters.png') no-repeat center center;
   -webkit-background-size: cover;
      -moz-background-size: cover;
           background-size: cover;
