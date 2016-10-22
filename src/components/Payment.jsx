@@ -20,6 +20,15 @@ class Payment extends Component {
     this.setState(updated);
   }
 
+  setSubmitButtonClass () {
+    const { ccNumber, expiration, CVC } = this.state;
+    if ((ccNumber > 0) && (expiration > 0) && (CVC > 0)) {
+      return 'payment-bottom-button--active';
+    }
+    else {
+      return 'payment-bottom-button--inactive';
+    }
+  }
 
   render() {
     return (
@@ -40,7 +49,7 @@ class Payment extends Component {
           By clicking the button below I accept Cleanapp&#39;s
           <br /><Link className="terms-link" to="/">Terms of Use</Link>
         </p>
-        <Link className="payment-bottom-button" to="finish">Make Payment</Link>
+        <Link className={`payment-bottom-button ${this.setSubmitButtonClass()}`} to="finish">Make Payment</Link>
       </div>
 
       )

@@ -27560,6 +27560,7 @@
 	  }, {
 	    key: 'handleInput',
 	    value: function handleInput(e) {
+	      console.log(e.target.value);
 	      var localPostalCode = e.target.value;
 	      if (e.target.value.length <= 7) {
 	        this.setState({ localPostalCode: localPostalCode });
@@ -27582,6 +27583,7 @@
 	    key: 'render',
 	    value: function render() {
 	      var postalCode = this.state.localPostalCode === 0 ? '' : this.state.localPostalCode;
+	      console.log(postalCode);
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main-child landing-container' },
@@ -28789,7 +28791,6 @@
 	      lastKana: '',
 	      firstKana: '',
 	      email: '',
-	      cityAdress: '',
 	      streetAddress: '',
 	      password: ''
 	    };
@@ -28799,11 +28800,6 @@
 	  }
 	
 	  _createClass(Register, [{
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      console.log('mounted');
-	    }
-	  }, {
 	    key: 'setSubmitButtonClass',
 	    value: function setSubmitButtonClass() {
 	      var _state = this.state;
@@ -28816,7 +28812,6 @@
 	      var streetAddress = _state.streetAddress;
 	      var password = _state.password;
 	
-	      console.log(email);
 	      if ((lastKanji.length > 0 && firstKanji.length > 0 || lastKana.length > 0 && firstKana.length > 0) && email.length > 0 && cityAddress.length > 0 && streetAddress.length > 0 && password.length > 0) {
 	        return 'register-bottom-button--active';
 	      } else {
@@ -28851,7 +28846,7 @@
 	          _react2.default.createElement('input', { type: 'text', className: 'in-line-input', onChange: this.handleChange, name: 'lastKana', placeholder: 'Last name (Kana)' }),
 	          _react2.default.createElement('input', { type: 'text', className: 'in-line-input', onChange: this.handleChange, name: 'firstKana', placeholder: 'First name (Kana)' }),
 	          _react2.default.createElement('input', { type: 'email', className: 'block-input', onChange: this.handleChange, name: 'email', placeholder: 'email' }),
-	          _react2.default.createElement('input', { type: 'text', className: 'block-input', onChange: this.handleChange, name: 'cityAddress', placeholder: 'City and Ku' }),
+	          _react2.default.createElement('input', { type: 'text', className: 'block-input city', value: '\u5DDD\u5D0E\u5E02\u4E2D\u539F\u533A' }),
 	          _react2.default.createElement('input', { type: 'text', className: 'block-input', onChange: this.handleChange, name: 'streetAddress', placeholder: 'Street address' }),
 	          _react2.default.createElement('input', { type: 'password', className: 'block-input', onChange: this.handleChange, name: 'password', placeholder: 'Create password' }),
 	          _react2.default.createElement('input', { type: 'password', className: 'block-input', name: 'password-confirm', placeholder: 'Confirm password' })
@@ -29072,6 +29067,20 @@
 	      this.setState(updated);
 	    }
 	  }, {
+	    key: 'setSubmitButtonClass',
+	    value: function setSubmitButtonClass() {
+	      var _state = this.state;
+	      var ccNumber = _state.ccNumber;
+	      var expiration = _state.expiration;
+	      var CVC = _state.CVC;
+	
+	      if (ccNumber > 0 && expiration > 0 && CVC > 0) {
+	        return 'payment-bottom-button--active';
+	      } else {
+	        return 'payment-bottom-button--inactive';
+	      }
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -29110,7 +29119,7 @@
 	        ),
 	        _react2.default.createElement(
 	          _reactRouter.Link,
-	          { className: 'payment-bottom-button', to: 'finish' },
+	          { className: 'payment-bottom-button ' + this.setSubmitButtonClass(), to: 'finish' },
 	          'Make Payment'
 	        )
 	      );

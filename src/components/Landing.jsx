@@ -32,6 +32,7 @@ class Landing extends Component {
     return 'submit-button--inactive';
   }
   handleInput(e) {
+    console.log(e.target.value);
     const localPostalCode = e.target.value;
     if (e.target.value.length <= 7) {
       this.setState({ localPostalCode });
@@ -50,6 +51,7 @@ class Landing extends Component {
   }
   render() {
     const postalCode = this.state.localPostalCode === 0 ? '' : this.state.localPostalCode;
+    console.log(postalCode);
     return (
       <div className="main-child landing-container">
         <div className="landing-content">

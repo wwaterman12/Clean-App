@@ -899,7 +899,6 @@ button {
 }
 
 .payment-bottom-button {
-  background-color: #00d5c3;
   color: #fff;
   display: block;
   font-weight: 300;
@@ -910,6 +909,14 @@ button {
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+}
+
+.payment-bottom-button--active {
+  background-color: #00d5c3;
+}
+
+.payment-bottom-button--inactive {
+  background-color: #f2f2f2;
 }
 /* =======================
 13. Finish

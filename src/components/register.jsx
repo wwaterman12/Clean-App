@@ -17,14 +17,9 @@ class Register extends Component {
     this.setSubmitButtonClass = this.setSubmitButtonClass.bind(this);
   }
 
-  componentDidMount () {
-    console.log('mounted');
-  }
-
   setSubmitButtonClass () {
     const { lastKanji, firstKanji, lastKana, firstKana, email, cityAddress, streetAddress, password }
     = this.state;
-    console.log(email);
     if ((((lastKanji.length > 0) && (firstKanji.length > 0)) || ((lastKana.length > 0) && (firstKana.length > 0)))
       && (email.length > 0) && (cityAddress.length > 0) && (streetAddress.length > 0) && (password.length > 0)) {
         return 'register-bottom-button--active';
