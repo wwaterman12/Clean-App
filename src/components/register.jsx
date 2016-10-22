@@ -12,9 +12,27 @@ class Register extends Component {
       email: '',
       cityAdress: '',
       streetAddress: '',
-      password: ''
+      password: '',
     }
     this.handleChange = this.handleChange.bind(this);
+    this.setSubmitButtonClass = this.setSubmitButtonClass.bind(this);
+  }
+
+  componentDidMount () {
+    console.log('mounted');
+  }
+
+  setSubmitButtonClass () {
+    const { lastKanji, firstKanji, lastKana, firstKana, email, cityAddress, streetAddress, password }
+    = this.state;
+    console.log(email);
+    if ((((lastKanji.length > 0) && (firstKanji.length > 0)) || ((lastKana.length > 0) && (firstKana.length > 0)))
+      && (email.length > 0) && (cityAddress.length > 0) && (streetAddress.length > 0) && (password.length > 0)) {
+        return 'register-bottom-button--active';
+      }
+    else {
+      return 'register-bottom-button--inactive';
+    }
   }
 
   handleChange(e) {
@@ -24,8 +42,6 @@ class Register extends Component {
     updated[inputName] = input.value;
     this.setState(updated);
   }
-
-
 
   render() {
     return (
@@ -42,7 +58,7 @@ class Register extends Component {
             <input type="password" className="block-input" onChange={this.handleChange} name="password" placeholder="Create password" />
             <input type="password" className="block-input" name="password-confirm" placeholder="Confirm password" />
           </div>
-          <Link className="register-bottom-button" to="confirm-order">Next</Link>
+          <Link className={`register-bottom-button ${this.setSubmitButtonClass()}`} to="confirm-order">Next</Link>
       </div>
 
     )

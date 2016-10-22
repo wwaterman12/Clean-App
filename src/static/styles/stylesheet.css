@@ -769,7 +769,6 @@ button {
 }
 
 .register-bottom-button {
-  background-color: #00d5c3;
   color: #fff;
   display: block;
   font-weight: 300;
@@ -781,6 +780,14 @@ button {
   text-transform: uppercase;
   width: 100%;
 
+}
+
+.register-bottom-button--active {
+  background-color: #00d5c3;
+}
+
+.register-bottom-button--inactive {
+  background-color: #f2f2f2;
 }
 
 /* =======================
@@ -883,6 +890,20 @@ button {
 
 .terms-link {
   color: #00d5c3;
+}
+
+.payment-bottom-button {
+  background-color: #00d5c3;
+  color: #fff;
+  display: block;
+  font-weight: 300;
+  padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
 }
 /* =======================
 13. Finish
