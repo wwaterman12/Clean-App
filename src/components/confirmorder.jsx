@@ -27,7 +27,7 @@ class ConfirmOrder extends Component {
   render() {
     return (
       <div>
-        <h3 className="confirm-heading">Please confirm your order</h3>
+        <h3 className="heading">Please confirm your order</h3>
         <div className="confirm-content">
           <p>Service time<span className="confirm-value">{this.state.date}<br />{this.state.time}</span></p>
         </div>
@@ -41,7 +41,7 @@ class ConfirmOrder extends Component {
         <div className="confirm-content final">
           <p>Your final price<span className="confirm-value">{this.state.finalPrice}</span></p>
         </div>
-        <Link className="confirm-bottom-button" to="/">Next</Link>
+        <Link className="confirm-bottom-button" to="/payment">Next</Link>
       </div>
     )
   }

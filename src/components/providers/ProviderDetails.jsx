@@ -25,7 +25,7 @@ class ProviderDetails extends Component {
         <div className="best-price-tag">Best price!</div>
         <Link className="detail-link">User comments <span>&gt;</span></Link>
         <Link className="detail-link">Company summary <span>&gt;</span></Link>
-        <Link to="confirm-order" className="bottom-button">Proceed to Checkout</Link>
+        <Link to="register" className="bottom-button">Proceed to Checkout</Link>
       </div>
     );
   }
