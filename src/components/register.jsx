@@ -18,10 +18,8 @@ class Register extends Component {
   }
 
   setSubmitButtonClass () {
-    const { lastKanji, firstKanji, lastKana, firstKana, email, cityAddress, streetAddress, password }
-    = this.state;
-    if ((((lastKanji.length > 0) && (firstKanji.length > 0)) || ((lastKana.length > 0) && (firstKana.length > 0)))
-      && (email.length > 0) && (cityAddress.length > 0) && (streetAddress.length > 0) && (password.length > 0)) {
+    if ((((this.state.lastKanji.length > 0) && (this.state.firstKanji.length > 0)) || ((this.state.lastKana.length > 0) && (this.state.firstKana.length > 0)))
+      && (this.state.email.length > 0) && (this.state.streetAddress.length > 0) && (this.state.password.length > 0)) {
         return 'register-bottom-button--active';
       }
     else {
