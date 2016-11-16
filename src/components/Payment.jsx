@@ -10,6 +10,7 @@ class Payment extends Component {
       CVC: '',
     }
    this.handleChange = this.handleChange.bind(this);
+   this.setSubmitButtonClass = this.setSubmitButtonClass.bind(this);
   }
 
   handleChange(e) {
@@ -18,6 +19,15 @@ class Payment extends Component {
     const updated = {};
     updated[inputName] = input.value;
     this.setState(updated);
+  }
+
+  setSubmitButtonClass() {
+    if (this.state.ccNumber.length > 0 && this.state.expiration.length > 0 && this.state.CVC.length > 0) {
+      return 'register-bottom-button--active';
+    } else {
+        return 'register-bottom-button--inactive';
+    }
+
   }
 
 
@@ -40,7 +50,7 @@ class Payment extends Component {
           By clicking the button below I accept Cleanapp&#39;s
           <br /><Link className="terms-link" to="/">Terms of Use</Link>
         </p>
-        <Link className="payment-bottom-button" to="finish">Make Payment</Link>
+        <Link className={`register-bottom-button ${this.setSubmitButtonClass()}`} to="finish">Make Payment</Link>
       </div>
 
       )
