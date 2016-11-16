@@ -1,4 +1,4 @@
-# Clean-App
+# e-commerce cleaning platform
 E-commerce platform for cleaning services
 
 ROUTES
